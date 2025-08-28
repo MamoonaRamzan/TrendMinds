@@ -1,0 +1,42 @@
+niche: "Artificial Intelligence"
+timespan_days: 7               # articles from last N days
+max_articles: 120              # cap to control cost/time
+top_k_per_query: 6
+chunk_size: 1000
+chunk_overlap: 150
+temperature: 0.2               # factual tone
+
+rss_feeds:
+  # General AI / Tech News
+  - "https://venturebeat.com/category/ai/feed/"
+  - "https://feeds.feedburner.com/thenextweb"
+
+  # AI Blogs / Research
+  - "https://huggingface.co/blog/feed.xml"
+  - "https://feeds.feedburner.com/oreilly/radar/atom"
+  - "https://syncedreview.com/feed/"
+
+  # Research papers
+  - "http://export.arxiv.org/rss/cs.AI"
+  - "http://export.arxiv.org/rss/cs.LG"
+
+  # Big Tech
+  - "https://blogs.microsoft.com/ai/feed/"
+  - "https://aws.amazon.com/blogs/machine-learning/feed/"
+  - "https://engineering.fb.com/feed/"
+
+sections:
+  tldr_bullets: 5
+  top_stories: 5
+  quick_bites: 8
+  further_reading: 8
+
+output:
+  folder: "output"
+  filename_md: "latest.md"
+  filename_html: "latest.html"
+
+branding:
+  title: "AI Weekly Insight"
+  subtitle: "Curated summaries powered by RAG + Groq"
+  author: "Mamoona Ramzan"
