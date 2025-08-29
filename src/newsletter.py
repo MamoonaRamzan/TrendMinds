@@ -1,5 +1,9 @@
+import markdown
 from jinja2 import Template
 from pathlib import Path
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 BASE_TEMPLATE = """# {{title}}
 *{{subtitle}}*  
@@ -37,34 +41,85 @@ BASE_TEMPLATE = """# {{title}}
 """
 
 def render_newsletter(payload: dict) -> str:
+    """Render newsletter in Markdown using Jinja2."""
     t = Template(BASE_TEMPLATE)
     return t.render(**payload)
 
 def save_outputs(markdown_text: str, out_dir: str, file_md: str, file_html: str):
+    """Save newsletter as Markdown and styled HTML."""
     Path(out_dir).mkdir(parents=True, exist_ok=True)
 
-    # Save markdown
+    # Save Markdown
     md_path = Path(out_dir) / file_md
     md_path.write_text(markdown_text, encoding="utf-8")
 
-    # Convert markdown → simple HTML (lightweight)
-    html_body = markdown_text.replace("\n", "<br>")
-    html_template = """<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Newsletter</title>
-  </head>
-  <body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; 
-               max-width: 820px; margin: auto; padding: 32px; line-height:1.5">
-    {body}
-  </body>
-</html>
-"""
-    html = html_template.format(body=html_body)
+    # Convert Markdown → proper HTML
+    html_body = markdown.markdown(markdown_text, extensions=["extra", "tables", "fenced_code"])
+    html_template = f"""<!doctype html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Newsletter</title>
+      <style>
+        body {{
+          font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+          max-width: 820px;
+          margin: auto;
+          padding: 32px;
+          line-height: 1.6;
+          background-color: #f9f9f9;
+        }}
+        h1, h2, h3 {{
+          color: #333;
+        }}
+        a {{
+          color: #1a73e8;
+          text-decoration: none;
+        }}
+        a:hover {{
+          text-decoration: underline;
+        }}
+      </style>
+    </head>
+    <body>
+      {html_body}
+    </body>
+    </html>
+    """
 
-    # Save HTML
     html_path = Path(out_dir) / file_html
-    html_path.write_text(html, encoding="utf-8")
+    html_path.write_text(html_template, encoding="utf-8")
 
     return str(md_path), str(html_path)
+
+def send_email(html_path: str, config: dict):
+    """Send newsletter email if enabled in config."""
+    email_cfg = config.get("email", {})
+    if not email_cfg.get("enabled", False):
+        print("📭 Email sending disabled in config.yml")
+        return
+
+    smtp_server = email_cfg["smtp_server"]
+    smtp_port = email_cfg["smtp_port"]
+    sender = email_cfg["sender"]
+    password = email_cfg["password"]
+    receivers = email_cfg["receivers"]
+
+    # Read the newsletter content
+    html_content = Path(html_path).read_text(encoding="utf-8")
+
+    # Build MIME email
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = "AI Weekly Insight"
+    msg["From"] = sender
+    msg["To"] = ", ".join(receivers)
+
+    # Attach HTML version
+    msg.attach(MIMEText(html_content, "html"))
+
+    # Send email
+    with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+        server.login(sender, password)
+        server.sendmail(sender, receivers, msg.as_string())
+
+    print(f"✅ Newsletter sent to: {', '.join(receivers)}")

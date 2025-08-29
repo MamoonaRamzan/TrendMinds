@@ -5,6 +5,8 @@ from tqdm import tqdm
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_core.documents import Document
+from .utils import clean_llm_output
+from .newsletter import render_newsletter, save_outputs, send_email
 
 from .utils import load_config, ensure_dir, env, today_iso
 from .fetch import fetch_rss_articles, scrape_article_text
@@ -76,7 +78,8 @@ def run():
         # pull more specific context per URL
         url_docs = db.similarity_search(url, k=4) + db.similarity_search(s.get("title",""), k=3)
         merged = "\n\n".join([d.page_content for d in url_docs][:6])
-        summary = summarizer.invoke({"title": s["title"], "url": url, "context": merged[:5000]})
+        summary_raw = summarizer.invoke({"title": s["title"], "url": url, "context": merged[:5000]})
+        summary = clean_llm_output(summary_raw)
         top_stories.append({
             "title": s["title"],
             "url": url,
@@ -86,7 +89,9 @@ def run():
 
     # TL;DR bullets
     blurbs = "\n\n".join([ts["summary"][:400] for ts in top_stories])
-    tldr = tldr_bullets_chain(llm).invoke({"niche": niche, "blurbs": blurbs, "n": sections["tldr_bullets"]})
+    tldr_raw = tldr_bullets_chain(llm).invoke({"niche": niche, "blurbs": blurbs, "n": sections["tldr_bullets"]})
+    tldr = clean_llm_output(tldr_raw)
+
 
     # Quick bites: sample a bunch of chunks and compress
     qb_ctx_docs = retriever.invoke(f"Short updates in {niche} this week, diverse topics.")
@@ -120,6 +125,9 @@ def run():
         md, out_dir=outcfg["folder"], file_md=outcfg["filename_md"], file_html=outcfg["filename_html"]
     )
     print(f"✅ Newsletter written:\n- {md_path}\n- {html_path}")
+
+    send_email(html_path, cfg)
+    print("Email send sucessfully !")
 
 if __name__ == "__main__":
     run()

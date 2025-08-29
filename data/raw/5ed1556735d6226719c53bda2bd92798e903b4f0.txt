@@ -1,0 +1,32 @@
+Computer Science > Multiagent Systems
+[Submitted on 27 Aug 2025]
+Title:Validating Generative Agent-Based Models for Logistics and Supply Chain Management Research
+View PDF HTML (experimental)Abstract:Generative Agent-Based Models (GABMs) powered by large language models (LLMs) offer promising potential for empirical logistics and supply chain management (LSCM) research by enabling realistic simulation of complex human behaviors. Unlike traditional agent-based models, GABMs generate human-like responses through natural language reasoning, which creates potential for new perspectives on emergent LSCM phenomena. However, the validity of LLMs as proxies for human behavior in LSCM simulations is unknown. This study evaluates LLM equivalence of human behavior through a controlled experiment examining dyadic customer-worker engagements in food delivery scenarios. I test six state-of-the-art LLMs against 957 human participants (477 dyads) using a moderated mediation design. This study reveals a need to validate GABMs on two levels: (1) human equivalence testing, and (2) decision process validation. Results reveal GABMs can effectively simulate human behaviors in LSCM; however, an equivalence-versus-process paradox emerges. While a series of Two One-Sided Tests (TOST) for equivalence reveals some LLMs demonstrate surface-level equivalence to humans, structural equation modeling (SEM) reveals artificial decision processes not present in human participants for some LLMs. These findings show GABMs as a potentially viable methodological instrument in LSCM with proper validation checks. The dual-validation framework also provides LSCM researchers with a guide to rigorous GABM development. For practitioners, this study offers evidence-based assessment for LLM selection for operational tasks.
+Submission history
+From: Vincent Castillo [view email][v1] Wed, 27 Aug 2025 19:30:08 UTC (1,393 KB)
+Current browse context:
+cs.MA
+References & Citations
+export BibTeX citation
+Loading...
+Bibliographic and Citation Tools
+Bibliographic Explorer (What is the Explorer?)
+Connected Papers (What is Connected Papers?)
+Litmaps (What is Litmaps?)
+scite Smart Citations (What are Smart Citations?)
+Code, Data and Media Associated with this Article
+alphaXiv (What is alphaXiv?)
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+DagsHub (What is DagsHub?)
+Gotit.pub (What is GotitPub?)
+Hugging Face (What is Huggingface?)
+Papers with Code (What is Papers with Code?)
+ScienceCast (What is ScienceCast?)
+Demos
+Recommenders and Search Tools
+Influence Flower (What are Influence Flowers?)
+CORE Recommender (What is CORE?)
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.

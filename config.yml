@@ -40,3 +40,13 @@ branding:
   title: "AI Weekly Insight"
   subtitle: "Curated summaries powered by RAG + Groq"
   author: "Mamoona Ramzan"
+
+email:
+  enabled: true
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 465
+  sender: "mamoonaramzan2@gmail.com"
+  password: "*********"   # app-specific password if Gmail
+  receivers:
+    - "mamoonaramzan2@gmail.com"
+    - "hafsaramzan2@gmail.com"

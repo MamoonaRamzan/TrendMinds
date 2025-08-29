@@ -1,0 +1,30 @@
+Computer Science > Machine Learning
+[Submitted on 27 Aug 2025]
+Title:Filter then Attend: Improving attention-based Time Series Forecasting with Spectral Filtering
+View PDF HTML (experimental)Abstract:Transformer-based models are at the forefront in long time-series forecasting (LTSF). While in many cases, these models are able to achieve state of the art results, they suffer from a bias toward low-frequencies in the data and high computational and memory requirements. Recent work has established that learnable frequency filters can be an integral part of a deep forecasting model by enhancing the model's spectral utilization. These works choose to use a multilayer perceptron to process their filtered signals and thus do not solve the issues found with transformer-based models. In this paper, we establish that adding a filter to the beginning of transformer-based models enhances their performance in long time-series forecasting. We add learnable filters, which only add an additional $\approx 1000$ parameters to several transformer-based models and observe in multiple instances 5-10 \% relative improvement in forecasting performance. Additionally, we find that with filters added, we are able to decrease the embedding dimension of our models, resulting in transformer-based architectures that are both smaller and more effective than their non-filtering base models. We also conduct synthetic experiments to analyze how the filters enable Transformer-based models to better utilize the full spectrum for forecasting.
+References & Citations
+export BibTeX citation
+Loading...
+Bibliographic and Citation Tools
+Bibliographic Explorer (What is the Explorer?)
+Connected Papers (What is Connected Papers?)
+Litmaps (What is Litmaps?)
+scite Smart Citations (What are Smart Citations?)
+Code, Data and Media Associated with this Article
+alphaXiv (What is alphaXiv?)
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+DagsHub (What is DagsHub?)
+Gotit.pub (What is GotitPub?)
+Hugging Face (What is Huggingface?)
+Papers with Code (What is Papers with Code?)
+ScienceCast (What is ScienceCast?)
+Demos
+Recommenders and Search Tools
+Influence Flower (What are Influence Flowers?)
+CORE Recommender (What is CORE?)
+IArxiv Recommender
+(What is IArxiv?)
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.

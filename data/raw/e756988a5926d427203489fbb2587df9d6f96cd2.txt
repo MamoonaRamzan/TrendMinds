@@ -1,0 +1,28 @@
+Computer Science > Artificial Intelligence
+[Submitted on 28 Aug 2025]
+Title:Human-AI Collaborative Bot Detection in MMORPGs
+View PDF HTML (experimental)Abstract:In Massively Multiplayer Online Role-Playing Games (MMORPGs), auto-leveling bots exploit automated programs to level up characters at scale, undermining gameplay balance and fairness. Detecting such bots is challenging, not only because they mimic human behavior, but also because punitive actions require explainable justification to avoid legal and user experience issues. In this paper, we present a novel framework for detecting auto-leveling bots by leveraging contrastive representation learning and clustering techniques in a fully unsupervised manner to identify groups of characters with similar level-up patterns. To ensure reliable decisions, we incorporate a Large Language Model (LLM) as an auxiliary reviewer to validate the clustered groups, effectively mimicking a secondary human judgment. We also introduce a growth curve-based visualization to assist both the LLM and human moderators in assessing leveling behavior. This collaborative approach improves the efficiency of bot detection workflows while maintaining explainability, thereby supporting scalable and accountable bot regulation in MMORPGs.
+References & Citations
+export BibTeX citation
+Loading...
+Bibliographic and Citation Tools
+Bibliographic Explorer (What is the Explorer?)
+Connected Papers (What is Connected Papers?)
+Litmaps (What is Litmaps?)
+scite Smart Citations (What are Smart Citations?)
+Code, Data and Media Associated with this Article
+alphaXiv (What is alphaXiv?)
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+DagsHub (What is DagsHub?)
+Gotit.pub (What is GotitPub?)
+Hugging Face (What is Huggingface?)
+Papers with Code (What is Papers with Code?)
+ScienceCast (What is ScienceCast?)
+Demos
+Recommenders and Search Tools
+Influence Flower (What are Influence Flowers?)
+CORE Recommender (What is CORE?)
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.

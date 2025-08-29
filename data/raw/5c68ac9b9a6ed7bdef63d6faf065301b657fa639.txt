@@ -1,0 +1,28 @@
+Computer Science > Computer Science and Game Theory
+[Submitted on 27 Aug 2025]
+Title:Collaborating with GenAI: Incentives and Replacements
+View PDF HTML (experimental)Abstract:The rise of Generative AI (GenAI) is reshaping how workers contribute to shared projects. While workers can use GenAI to boost productivity or reduce effort, managers may use it to replace some workers entirely. We present a theoretical framework to analyze how GenAI affects collaboration in such settings. In our model, the manager selects a team to work on a shared task, with GenAI substituting for unselected workers. Each worker selects how much effort to exert, and incurs a cost that increases with the level of effort. We show that GenAI can lead workers to exert no effort, even if GenAI is almost ineffective. We further show that the manager's optimization problem is NP-complete, and provide an efficient algorithm for the special class of (almost-) linear instances. Our analysis shows that even workers with low individual value may play a critical role in sustaining overall output, and excluding such workers can trigger a cascade. Finally, we conduct extensive simulations to illustrate our theoretical findings.
+References & Citations
+export BibTeX citation
+Loading...
+Bibliographic and Citation Tools
+Bibliographic Explorer (What is the Explorer?)
+Connected Papers (What is Connected Papers?)
+Litmaps (What is Litmaps?)
+scite Smart Citations (What are Smart Citations?)
+Code, Data and Media Associated with this Article
+alphaXiv (What is alphaXiv?)
+CatalyzeX Code Finder for Papers (What is CatalyzeX?)
+DagsHub (What is DagsHub?)
+Gotit.pub (What is GotitPub?)
+Hugging Face (What is Huggingface?)
+Papers with Code (What is Papers with Code?)
+ScienceCast (What is ScienceCast?)
+Demos
+Recommenders and Search Tools
+Influence Flower (What are Influence Flowers?)
+CORE Recommender (What is CORE?)
+arXivLabs: experimental projects with community collaborators
+arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website.
+Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them.
+Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs.

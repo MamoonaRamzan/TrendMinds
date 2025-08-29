@@ -1,0 +1,55 @@
+Want smarter insights in your inbox? Sign up for our weekly newsletters to get only what matters to enterprise AI, data, and security leaders. Subscribe Now
+There’s no question that AI agents — those that can work autonomously and asynchronously behind the scenes in enterprise workflows — are the topic du jour in enterprise right now.
+But there’s increasing concern that it’s all just that — talk, mostly hype, without much substance behind it.
+Gartner, for one, observes that enterprises are at the “peak of inflated expectations,” a period just before disillusionment sets in because vendors haven’t backed up their talk with tangible, real-world use cases.
+Still, that’s not to say that enterprises aren’t experimenting with AI agents and seeing early return on investment (ROI); global enterprises Block and GlaxoSmithKline (GSK), for their parts, are exploring proof of concepts in financial services and drug discovery.
+AI Scaling Hits Its Limits
+Power caps, rising token costs, and inference delays are reshaping enterprise AI. Join our exclusive salon to discover how top teams are:
+- Turning energy into a strategic advantage
+- Architecting efficient inference for real throughput gains
+- Unlocking competitive ROI with sustainable AI systems
+Secure your spot to stay ahead: https://bit.ly/4mwGngO
+“Multi-agent is absolutely what’s next, but we’re figuring out what that looks like in a way that meets the human, makes it convenient,” Brad Axen, Block’s tech lead for AI and data platforms, told VentureBeat CEO and editor-in-chief Matt Marshall at a recent SAP-sponsored AI Impact event this month.
+Working with a single colleague, not a swarm of bots
+Block, the 10,000-employee parent company of Square, Cash App and Afterpay, considers itself in full discovery mode, having rolled out an interoperable AI agent framework, codenamed goose, in January.
+Goose was initially introduced for software engineering tasks, and is now used by 4,000 engineers, with adoption doubling monthly, Axen explained. The platform writes about 90% of code and has saved engineers an estimated 10 hours of work per week by automating code generation, debugging and information filtering.
+In addition to writing code, Goose acts as a “digital teammate” of sorts, compressing Slack and email streams, integrating across company tools and spawning new agents when tasks demand more throughput and expanded scope.
+Axen emphasized that Block is focused on creating one interface that feels like working with a single colleague, not a swarm of bots. “We want you to feel like you’re working with one person, but they’re acting on your behalf in many places in many different ways,” he explained.
+Goose operates in real time in the development environment, searching, navigating and writing code based on large language model (LLM) output, while also autonomously reading and writing files, running code and tests, refining outputs and installing dependencies.
+Essentially, anyone can build and operate a system on their preferred LLM, and Goose can be conceptualized as the application layer. It has a built-in desktop application and command line interface, but devs can also build custom UIs. The platform is built on Anthropic’s Model Context Protocol (MCP), an increasingly popular open-source standardized set of APIs and endpoints that connects agents to data repositories, tools and development environments.
+Goose has been released under the open-source Apache License 2.0 (ASL2), meaning anyone can freely use, modify and distribute it, even for commercial purposes. Users can access Databricks databases and make SQL calls or queries without needing technical knowledge.
+“We really want to come up with a process that lets people get value out of the system without having to be an expert,” Axen explained.
+For instance, in coding, users can say what they want in natural language and the framework will interpret that into thousands of lines of code that devs can then read and sift through. Block is seeing value in compression tasks, too, such as Goose reading through Slack, email and other channels and summarizing information for users. Further, in sales or marketing, agents can gather relevant information on a potential client and port it into a database.
+AI agents underutilized, but human domain expertise still necessary
+Process has been the biggest bottleneck, Axen noted. You can’t just give people a tool and tell them to make it work for them; agents need to reflect the processes that employees are already engaged with. Human users aren’t worried about the technical backbone, — rather, the work they’re trying to accomplish.
+Builders, therefore, need to look at what employees are trying to do and design the tools to be “as literally that as possible,” said Axen. Then they can use that to chain together and tackle bigger and bigger problems.
+“I think we’re hugely underusing what they can do,” Axen said of agents. “It’s the people and the process because we can’t keep up with the technology. There’s a huge gap between the technology and the opportunity.”
+And, when the industry bridges that, will there still be room for human domain expertise? Of course, Axen says. For instance, particularly in financial services, code must be reliable, compliant and secure to protect the company and users; therefore, it must be reviewed by human eyes.
+“We still see a really critical role for human experts in every part of operating our company,” he said. “It doesn’t necessarily change what expertise means as an individual. It just gives you a new tool to express it.”
+Block built on an open-source backbone
+The human UI is one of the most difficult elements of AI agents, Axen noted; the goal is to make interfaces simple to use while AI is in the background proactively taking action.
+It would be helpful, Axen noted, if more industry players incorporate MCP-like standards. For instance, “I would love for Google to just go and have a public MCP for Gmail,” he said. “That would make my life a lot easier.”
+When asked about Block’s commitment to open source, he noted, “we’ve always had an open-source backbone,” adding that over the last year the company has been “renewing” its investment to open technologies.
+“In a space that’s moving this fast, we’re hoping we can set up open-source governance so that you can have this be the tool that keeps up with you even as new models and new products come out.”
+GSK’s experiences with multi agents in drug discovery
+GSK is a leading pharmaceutical developer, with specific focus on vaccines, infectious diseases and oncology research. Now, the company is starting to apply multi-agent architectures to accelerate drug discovery.
+Kim Branson, GSK’s SVP and global head of AI and ML, said agents are beginning to transform the company’s product and are “absolutely core to our business.”
+GSK’s scientists are combining domain-specific LLMs with ontologies (subject matter concepts and categories that indicate properties and relations between them), toolchains and rigorous testing frameworks, Branson explained.
+This helps them query gigantic scientific datasets, plan out experiments (even if there is no ground truth) and assemble evidence across genomics (the study of DNA), proteomics (the study of protein) and clinical data. Agents can surface hypotheses, validate data joins and compress research cycles.
+Branson noted that scientific discovery has come a long way; sequencing times have come down, and proteomics research is much faster. At the same time, though, discovery becomes ever more difficult as more and more data is amassed, particularly through devices and wearables. As Branson put it: “We have more continuous pulse data on people than we’ve ever had before as a species.”
+It can be almost impossible for humans to analyze all that data, so GSK’s goal is to use AI to speed up iteration times, he noted.
+But, at the same time, AI can be tricky in big pharma because there often isn’t a ground truth without performing big clinical experiments; it’s more about hypotheses and scientists exploring evidence to come up with possible solutions.
+“When you start to add agents, you find that most people actually haven’t even got a standard way of doing it amongst themselves,” Branson noted. “That variance isn’t bad, but sometimes it leads to another question.”
+He quipped: “We don’t always have an absolute truth to work with — otherwise my job would be a lot easier.”
+It’s all about coming up with the right targets or knowing how to design what could be a biomarker or evidence for different hypotheses, he explained. For instance: Is this the best avenue to consider for people with ovarian cancer in this particular condition?
+To get the AI to understand that reasoning requires the use of ontologies and posing questions such as, ‘If this is true, what does X mean?’. Domain-specific agents can then pull together relevant evidence from large internal datasets.
+GSK built epigenomic language models powered by Cerebras from scratch that it uses for inference and training, Branson explained. “We build very specific models for our applications where no one else has one,” he said.
+Inference speed is important, he noted, whether for back-and-forth with a model or autonomous deep research, and GSK uses different sets of tools based on the end goal. But large context windows aren’t always the answer, and filtering is critical. “You can’t just play context stuffing,” said Branson. “You can’t just throw all the data in this thing and trust the LM to figure it out.”
+Ongoing testing critical
+GSK puts a lot of testing into its agentic systems, prioritizing determinism and reliability, often running multiple agents in parallel to cross-check results.
+Branson recalled that, when his team first started building, they had an SQL agent that they ran “10,000 times,” and it inexplicably suddenly “faked up” details.
+“We never saw it happen again but it happened once and we didn’t even understand why it happened with this particular LLM,” he said.
+As a result, his team will often run multiple copies and models in parallel while enforcing tool calling and constraints; for instance, two LLMs will perform exactly the same sequence and GSK scientists will cross-check them.
+His team focuses on active learning loops and is assembling its own internal benchmarks because popular, publicly-available ones are often “fairly academic and not reflective of what we do.”
+For instance, they will generate several biological questions, score what they think the gold standard will be, then apply an LLM against that and see how it ranks.
+“We especially hunt for problematic things where it didn’t work or it did a dumb thing, because that’s when we learn some new stuff,” said Branson. “We try to have the humans use their expert judgment where it matters.”

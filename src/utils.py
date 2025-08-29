@@ -2,6 +2,7 @@ import os, re, hashlib, datetime as dt
 from pathlib import Path
 from dotenv import load_dotenv
 import yaml
+import re
 
 load_dotenv()
 
@@ -25,3 +26,14 @@ def sha1(s: str):
 
 def env(key: str, default: str | None = None):
     return os.getenv(key, default)
+
+def clean_llm_output(text: str) -> str:
+    """
+    Removes unwanted reasoning traces like <think> ... </think>
+    and trims extra whitespace.
+    """
+    # remove <think>...</think> blocks
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
+    # strip leftover 'Okay, let’s...' type intros (common in traces)
+    text = re.sub(r"(?i)^.*?(Summary|##|###|-|\*\*)", r"\1", text, flags=re.DOTALL)
+    return text.strip()

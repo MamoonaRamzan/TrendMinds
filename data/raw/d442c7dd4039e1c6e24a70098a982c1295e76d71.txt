@@ -1,0 +1,40 @@
+Want smarter insights in your inbox? Sign up for our weekly newsletters to get only what matters to enterprise AI, data, and security leaders. Subscribe Now
+Software developers spend most of their time not writing code; recent industry research found that actual coding accounts for as little as 16% of developers’ working hours, with the rest consumed by operational and supportive tasks. As engineering teams are pressured to “do more with less” and CEOs are bragging about how much of their codebase is written by AI, a question remains: What’s done to optimize the remaining 84% of the tasks that engineers are working on?
+Keep developers where they are the most productive
+A major culprit to developer productivity is context switching: The constant hopping between the ever-growing array of tools and platforms needed to build and ship software. A Harvard Business Review study found that the average digital worker flips between applications and websites nearly 1,200 times per day. And every interruption matters. The University of California found that it takes about 23 minutes to regain focus after a single interruption fully, and sometimes worse, as nearly 30% of interrupted tasks are never resumed. Context switching is actually at the center of DORA, one of the most popular performance software development frameworks.
+In an era where AI-driven companies are trying to empower their employees to do more with less, beyond “just” giving them access to large language models (LLMs), some trends are emerging. For example, Jarrod Ruhland, principal engineer at Brex, hypothesizes that “developers deliver their highest value when focused within their integrated development environment (IDE)”. With that in mind, he decided to find new ways to make this happen, and Anthropic’s new protocol might be one of the keys.
+MCP: A protocol to bring context to IDEs
+Coding assistants, such as LLM-powered IDEs like Cursor, Copilot and Windsurf, are at the center of a developer renaissance. Their adoption speed is unseen. Cursor became the fastest-growing SaaS in history, reaching $100 million ARR within 12 months of launch, and 70% of Fortune 500 companies use Microsoft Copilot.
+AI Scaling Hits Its Limits
+Power caps, rising token costs, and inference delays are reshaping enterprise AI. Join our exclusive salon to discover how top teams are:
+- Turning energy into a strategic advantage
+- Architecting efficient inference for real throughput gains
+- Unlocking competitive ROI with sustainable AI systems
+Secure your spot to stay ahead: https://bit.ly/4mwGngO
+But these coding assistants were only limited to codebase context, which could help developers write code faster, but could not help with context switching. A new protocol is addressing this issue: Model Context Protocol (MCP). Released in November 2024 by Anthropic, it is an open standard developed to facilitate integration between AI systems, particularly LLM-based tools, and external tools and data sources. The protocol is so popular that there has been a 500% increase of new MCP servers in the last 6 months, with an estimated 7 million downloads in June,
+One of the most impactful applications of MCP is its ability to connect AI coding assistants directly to the tools developers rely on every day, streamlining workflows and dramatically reducing context switching.
+Take feature development as an example. Traditionally, it involves bouncing between several systems: Reading the ticket in a project tracker, looking at a conversation with a teammate for clarification, searching documentation for API details and, finally, opening the IDE to start coding. Each step lives in a different tab, requiring mental shifts that slow developers down.
+With MCP and modern AI assistants like Anthropic’s Claude, that entire process can happen inside the editor.
+For example, implementing a feature all within a coding assistant becomes:
+- Pull in the ticket details using Linear MCP server;
+- Surface relevant conversations using Slack MCP server;
+- Bring in the right documentation using Glean MCP server
+- Write the feature by asking Cursor to write a scaffolding for it.
+The same principle can apply to many other engineers workflow, for instance an incident response for SREs could look like:
+- Pull an incident via Rootly MCP server
+- Retrieve trace data through Sentry MCP server
+- Import observability metrics via Chronosphere MCP server
+- Resolve the bug that caused the incident by asking Claude Deskop
+Nothing new under the sun
+We’ve seen this pattern before. Over the past decade, Slack has transformed workplace productivity by becoming a hub for hundreds of apps, enabling employees to manage a wide range of tasks without leaving the chat window. Slack’s platform reduced context switching in everyday workflows.
+Riot Games, for example, connected around 1,000 Slack apps, and engineers saw a 27% reduction in time needed to test and iterate code, a 22% faster time to identify new bugs and a 24% increase in feature launch rate; all were attributed to streamlining workflows and reducing the friction of tool-switching.
+Now, a similar transformation is occurring in software development, with AI assistants and their MCP integrations serving as the bridge to all these external tools. In effect, the IDE could become the new all-in-one command center for engineers, much like Slack has been for general knowledge workers.
+MCP may not be enterprise ready
+MCP is a relatively nascent standard, for example, security wisem MCP has no built-in authentication or permission model, relying on external implementations that are still evolving There’s also ambiguity around identity and auditing — the protocol doesn’t clearly distinguish whether an action was triggered by a user or the AI itself, making accountability and access control difficult without additional custom solutions. Lori MacVittie, distinguished engineer and chief evangelist in F5 Networks’ Office of the CTO, says that MCP is “breaking core security assumptions that we’ve held for a long time.”
+Another practical limitation arises when too many MCP tools or servers are used simultaneously, for example, inside a coding assistant. Each MCP server advertises a list of tools, with descriptions and parameters, that the AI model needs to consider. Flooding the model with dozens of available tools can overwhelm its context window. Performance degrades noticeably as the tool count grows with some IDE integrations have imposed hard limits (around 40 tools in Cursor IDE, or ~20 tools for the OpenAI agent) to prevent the prompt from bloating beyond what the model can handle
+Finally, there is no sophisticated way for tools to be auto-discovered or contextually suggested beyond listing them all, so developers often have to toggle them manually or curate which tools are active to keep things working smoothly. Referring to that example of Riot Games installing 1,000 Slack apps, we can see how it might be unfit for enterprise usage.
+Less swivel-chair, more software
+The past decade has taught us the value of bringing work to the worker, from Slack channels that pipe in updates to “inbox zero” email methodologies and unified platform engineering dashboards. Now, with AI in our toolkit, we have an opportunity to empower developers to be more productive. Suppose Slack became the hub of business communication.
+In that case, coding assistants are well-positioned to become the hub of software creation, not just where code is written, but where all the context and collaborators coalesce. By keeping developers in their flow, we remove the constant mental gear-shifting that has plagued engineering productivity.
+For any organization that depends on software delivery, take a hard look at how your developers spend their day; you might be surprised by what you find.
+Sylvain Kalache leads AI Labs at Rootly.
