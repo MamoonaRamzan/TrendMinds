@@ -1,0 +1,36 @@
+name: Weekly Newsletter
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # every Monday at 07:00 UTC
+  workflow_dispatch:       # allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run newsletter generator
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          RECEIVER_EMAILS: ${{ secrets.RECEIVER_EMAILS }}
+        run: python -m src.run
+
+      - name: Upload generated newsletter
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter
+          path: output/
