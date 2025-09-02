@@ -1,9 +1,13 @@
+import os
+import ssl
 import markdown
 from jinja2 import Template
 from pathlib import Path
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+
 
 BASE_TEMPLATE = """# {{title}}
 *{{subtitle}}*  
@@ -93,24 +97,29 @@ def save_outputs(markdown_text: str, out_dir: str, file_md: str, file_html: str)
     return str(md_path), str(html_path)
 
 def send_email(html_path: str, config: dict):
-    """Send newsletter email if enabled in config."""
+    """Send newsletter email if enabled in config.yml (with secrets from env)."""
     email_cfg = config.get("email", {})
     if not email_cfg.get("enabled", False):
         print("📭 Email sending disabled in config.yml")
         return
 
-    smtp_server = email_cfg["smtp_server"]
-    smtp_port = email_cfg["smtp_port"]
-    sender = email_cfg["sender"]
-    password = email_cfg["password"]
-    receivers = email_cfg["receivers"]
+    smtp_server = email_cfg.get("smtp_server", "smtp.gmail.com")
+    smtp_port = email_cfg.get("smtp_port", 465)
+
+    # 🔑 Read secrets from environment instead of config.yml
+    sender = os.getenv("SENDER_EMAIL")
+    password = os.getenv("EMAIL_PASSWORD")
+    receivers = os.getenv("RECEIVER_EMAILS", "").split(",")
+
+    if not sender or not password or not receivers:
+        raise ValueError("❌ Missing email credentials in environment variables.")
 
     # Read the newsletter content
     html_content = Path(html_path).read_text(encoding="utf-8")
 
     # Build MIME email
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = "AI Weekly Insight"
+    msg["Subject"] = config.get("branding", {}).get("title", "Weekly Newsletter")
     msg["From"] = sender
     msg["To"] = ", ".join(receivers)
 
@@ -118,7 +127,8 @@ def send_email(html_path: str, config: dict):
     msg.attach(MIMEText(html_content, "html"))
 
     # Send email
-    with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
         server.login(sender, password)
         server.sendmail(sender, receivers, msg.as_string())
 
