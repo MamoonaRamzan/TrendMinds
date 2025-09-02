@@ -1,29 +1,86 @@
-niche: "Artificial Intelligence"
+# Multiple niches instead of single "niche"
+niches:
+  AI:
+    - https://huggingface.co/blog/feed.xml
+    - https://blogs.microsoft.com/ai/feed/
+    - https://syncedreview.com/feed/
+    - https://www.marktechpost.com/feed/
+    - https://www.topbots.com/feed/
+    - https://artificialintelligence-news.com/feed/
+    - https://techcrunch.com/category/artificial-intelligence/feed/
+    - https://aws.amazon.com/blogs/machine-learning/feed/
+    - https://towardsdatascience.com/feed
+    - https://kdnuggets.com/feed
+    - https://datafloq.com/feed
+
+  Crypto:
+    - https://cointelegraph.com/rss
+    - https://news.bitcoin.com/feed/
+    - https://decrypt.co/feed
+    - https://cryptoslate.com/feed/
+
+  Climate:
+    - https://www.theguardian.com/environment/climate-crisis/rss
+    - https://www.nature.com/subjects/climate-change.rss
+    - https://cleantechnica.com/feed/
+    - https://grist.org/feed/
+    - https://www.carbonbrief.org/feed/
+
+  Tech:
+    - https://www.wired.com/feed/rss
+    - https://thenextweb.com/feed/
+    - https://spectrum.ieee.org/rss/fulltext
+    - https://www.technologyreview.com/feed/
+    - https://www.fastcompany.com/section/technology/rss
+    - https://www.zdnet.com/news/rss.xml
+    - https://feeds.feedburner.com/venturebeat/SZYF
+    - https://inc42.com/feed/
+    - https://www.ycombinator.com/blog/rss/
+    - https://futureoflife.org/feed/ 
+
+  Business:
+    - https://www.forbes.com/innovation/feed/
+    - https://www.fastcompany.com/section/work-life/rss
+    - https://www.hcamag.com/rss
+
+  Health/Biotech:
+    - https://www.healthit.gov/buzz-blog/feed/
+    - https://medicalxpress.com/rss-feed/
+    - https://www.digitalhealth.net/feed/
+    - https://www.biotechniques.com/feed/
+    - https://www.labiotech.eu/feed/
+    - https://www.nature.com/subjects/biotechnology.rss
+    - https://www.genengnews.com/feed/
+
+  Space:
+    - https://www.nasa.gov/rss/dyn/breaking_news.rss
+    - https://spacenews.com/feed/
+    - https://www.space.com/feeds/all
+    - https://arstechnica.com/science/space/rss
+
+  EdTech:
+    - https://www.classcentral.com/report/feed/
+    - https://edtechmagazine.com/k12/rss.xml
+    - https://edtechmagazine.com/higher/rss.xml
+    - https://elearningindustry.com/feed
+
+  Science & Research:
+    - https://www.sciencedaily.com/rss/top/science.xml
+    - https://www.sciencenews.org/feed
+    - https://www.newscientist.com/feed/home/
+    - https://phys.org/rss-feed/
+
+  Cybersecurity:
+    - https://www.schneier.com/feed/atom/
+    - https://krebsonsecurity.com/feed/
+    - https://www.darkreading.com/rss.xml      
+
 timespan_days: 7               # articles from last N days
 max_articles: 120              # cap to control cost/time
 top_k_per_query: 6
 chunk_size: 1000
 chunk_overlap: 150
 temperature: 0.2               # factual tone
-
-rss_feeds:
-  # General AI / Tech News
-  - "https://venturebeat.com/category/ai/feed/"
-  - "https://feeds.feedburner.com/thenextweb"
-
-  # AI Blogs / Research
-  - "https://huggingface.co/blog/feed.xml"
-  - "https://feeds.feedburner.com/oreilly/radar/atom"
-  - "https://syncedreview.com/feed/"
-
-  # Research papers
-  - "http://export.arxiv.org/rss/cs.AI"
-  - "http://export.arxiv.org/rss/cs.LG"
-
-  # Big Tech
-  - "https://blogs.microsoft.com/ai/feed/"
-  - "https://aws.amazon.com/blogs/machine-learning/feed/"
-  - "https://engineering.fb.com/feed/"
 
 sections:
   tldr_bullets: 5
@@ -37,16 +94,12 @@ output:
   filename_html: "latest.html"
 
 branding:
-  title: "AI Weekly Insight"
-  subtitle: "Curated summaries powered by RAG + Groq"
+  title: "Weekly Insight"
+  subtitle: "Curated summaries powered by RAG & Groq AI"
   author: "Mamoona Ramzan"
 
 email:
   enabled: true
   smtp_server: "smtp.gmail.com"
   smtp_port: 465
-  sender: "mamoonaramzan2@gmail.com"
-  password: "*********"   # app-specific password if Gmail
-  receivers:
-    - "mamoonaramzan2@gmail.com"
-    - "hafsaramzan2@gmail.com"
+
