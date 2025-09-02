@@ -1,0 +1,16 @@
+In brief
+- Bitcoin reclaimed $109,000 Monday morning, after dipping to $107,500 over the weekend.
+- Ethereum has sagged 1.5% on the day to $4,406 amid a broader 4.3% weekly drop.
+- Despite this, Ethereum dominated institutional crypto inflows, accounting for 57% of the $2.48 billion that the market attracted, according to CoinShares.
+Bitcoin regained $109,000 Monday morning following a weekend dip to $107,500, according to CoinGecko data.
+Bitcoin’s price action came after a CoinShares report noted that Ethereum inflows “dominate” institutional crypto inflows, which topped $4.37 billion in August.
+Ethereum has dropped 1.5% on the day to $4,406, amid a broader 4.3% weekly downturn for the cryptocurrency. Despite this, according to CoinShares, ETH dominated inflows via digital asset investment products such as ETFs and ETPs.
+The entire cryptocurrency market attracted weekly inflows of $2.48 billion, CoinShares said, with Ethereum accounting for $1.42 billion or 57.26% of all crypto inflows. By comparison, Bitcoin saw just $748 million worth of inflows, almost half that of Ethereum’s.
+Zooming out to the month, this pattern is even more apparent. Ethereum has seen a monthly inflow of $3.96 billion, while Bitcoin has seen an outflow of $301 million.
+“$4.37 billion [crypto] inflows for August, Ethereum continues to dominate Bitcoin,” CoinShares Head of Research James Butterfill wrote. He added that, “Inflows were strong throughout the week but turned negative on Friday after the release of Core PCE data, which failed to support expectations of a Federal Reserve rate cut in September, disappointing digital asset investors.”
+Bitcoin dominance in the balance
+Regardless of Ethereum’s institutional inflow supremacy, the token has sagged more than Bitcoin over the week—down 4.3% compared to Bitcoin’s 2% weekly drop. As a result, according to TradingView, Bitcoin dominance has traded sideways at around 58% over the past seven days as altcoins like Filecoin, Polygon, and Mantle posted weekly gains.
+Bitcoin dominance refers to the ratio of Bitcoin’s market cap compared to the rest of the crypto market. It is often used as a measure of how strong altcoins like Ethereum are.
+Predictors on Myriad Markets believe that it is almost a coin flip on whether Bitcoin dominance will pump to 63% or dump to 53% next. Just last week, predictors saw a 60% likelihood of it dropping, but it has since flipped to a 52% chance that Bitcoin dominance will hit the higher level next.
+CoinShares noted that the U.S. dominated crypto inflows last week, drawing in $2.29 billion. “Positive sentiment was evident across most other regions as well, with Switzerland, Germany, and Canada seeing inflows of $109.4 million, $69.9 million, and $41.1 million respectively,” Butterfill said.
+On Friday, crypto liquidations topped $500 million, as Bitcoin dropped 4%, Ethereum 6%, and XRP 6%. Butterfill noted that the broad regional spread of inflows indicates that outflows late last week were “more likely driven by profit-taking rather than signalling a more concerning trend for the asset class.”

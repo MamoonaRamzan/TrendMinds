@@ -1,0 +1,25 @@
+In brief
+- BRC-2.0 embeds EVM functionality directly into Bitcoin’s BRC-20 indexer.
+- The upgrade aims to expand Bitcoin tokens beyond meme coins into programmable assets.
+- Backers say the move positions BRC-20 ahead of Runes by enabling a DeFi ecosystem.
+BRC-20, the first token standard built directly on Bitcoin’s base layer and indexers, has officially launched “BRC2.0” at Bitcoin block height 912690, which took place Monday morning.
+The upgrade embeds EVM (Ethereum Virtual Machine) functionality directly into the BRC-20 core indexer, allowing developers to deploy Ethereum-style smart contracts on Bitcoin, without relying on bridges, oracles, or trusted intermediaries.
+The move enables programmability to Bitcoin-native tokens, effectively turning BRC-20 assets into composable and interoperable instruments that can interact with EVM-compatible chains and scaling layers.
+The BRC2.0 upgrade was developed by Best In Slot, a key infrastructure player in the Ordinals ecosystem, in collaboration with BRC20’s pseudonymous creator Domo and the Layer 1 Foundation, the governance body overseeing the protocol.
+“Bitcoin meta-protocols like Ordinals, Runes, and BRC20 run on indexers, which function like simple calculators,” Eril Binari Ezerel, CEO of Best In Slot, shared in a press release to Decrypt. “We upgraded this ‘calculator-style’ indexer with EVM—making BRC20 Turing complete.”
+From meme coins to modular apps
+Since its launch in early 2023, BRC-20 has seen over $3 billion in asset value traded. The milestone has been achieved without raising venture capital or receiving institutional support.
+Even as activity cooled in 2025, BRC-20 volumes remained dominant, registering 5,636 BTC (US$633 million) in on-chain volume over the last six months, more than double Runes and nearly five times more than traditional Ordinals inscriptions.
+The new smart contract functionality expands what’s possible for Bitcoin-native assets.
+Until now, these tokens have been primarily used for meme coins and speculative trading, with few real-world applications due to Bitcoin’s limited programmability.
+“Adoption of Bitcoin native assets has been stifled because there are no dApps on Bitcoin; it’s just memes,” Ezerel added. “One of the main goals of BRC2.0 is to bring Ethereum's more diverse application ecosystem onto Bitcoin.”
+BRC2.0 enters a growing landscape of programmable Bitcoin layers, including the WASM-based Alkanes standard, which recently surged to represent nearly one-third of all meta-protocol related transactions in Q3.
+Comparisons to Runes
+So what does this mean for the current state of the Bitcoin fungible tokens market?
+“The Bitcoin token market struggles because it is almost entirely meme coins, Asher Corson, CIO of Unbroken Chain, the first institution-backed liquid trading fund in the Bitcoin Ordinals ecosystem, told Decrypt.
+“Programmability and DeFi will spark renewed interest, with profits likely rotating into inscriptions, potentially driving another bull run for Bitcoin assets,” he said.
+Corson also explained how the move compares to Runes and how this places BRC-20 in a separate category.
+“The BRC-20 2.0 upgrade introduces programmability. Runes is not programmable and is unlikely to ever be. This essentially limits Runes to meme coins. BRC-20 2.0, on the other hand, will be capable of supporting a DeFi ecosystem.”
+Bridging two giants
+The integration of EVM into BRC20’s core layer means developers can now build dApps directly secured by Bitcoin, while maintaining compatibility with Ethereum tooling. No bridges, no wrapped assets—just native composability.
+“The holy grail is combining the two gold standards: Bitcoin as the most decentralized and secure network, and the EVM as the most proven virtual machine,” Domo, the creator of BRC20, said. “The aim is to give users the Ethereum experience of composability and programmability, but secured by Bitcoin.”

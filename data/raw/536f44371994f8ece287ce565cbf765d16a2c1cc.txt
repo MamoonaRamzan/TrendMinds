@@ -1,0 +1,18 @@
+In brief
+- Ukraine could recover up to $10 billion lost to unregulated crypto activity with more stringent regulation, according to the Royal United Services Institute.
+- A new RUSI report noted that Russian actors are exploiting regulatory gaps to fund military procurement and spread drugs.
+- Ukrainian lawmakers face a 2025 deadline to align with EU rules and plug financial risks.
+Ukraine could recover at least $10 billion in stolen funds and lost tax revenue if it were to implement a more comprehensive cryptocurrency regulation framework, according to a report published by the Royal United Services Institute (RUSI).
+The UK-based defence and security think tank warned that without swift action, Ukraine risks further erosion of its finances and security.
+“Ukraine-specific risks are primarily connected with the over-the-counter (OTC) activities in the country, its role as a threat hub and the role of crypto in funding procurement of sanctioned components for the Russian military, money mules and others,” the report said.
+The report urged Ukraine to narrow its focus to attracting specific assets such as stablecoins, recognize the overlap between cybercrime and illicit finance and set clear regulatory rules. Failing to act could see Ukraine remain a hub for laundering Russian money, while scaring away legitimate startups with over-taxation and corruption, the authors argued.
+Attempts to regulate crypto in Ukraine began in 2018. Its parliament adopted the Law on Virtual Assets in February 2022, days before the Russian invasion. But the law has yet to take effect because parliament must still pass a separate taxation bill.
+Under its EU accession process, Ukraine is additionally obliged to harmonize its virtual asset rules with EU standards by late 2025. It must also comply with Financial Action Task Force (FATF) rules on preventing money laundering and terrorism financing. Experts warn that Ukraine’s already “partially compliant” status with FATF could be downgraded in the next MONEYVAL review.
+RUSI highlighted how money-mule networks, known locally as “drops,” drain $24 million from Ukraine’s budget each month. Banks shut down 80,000 mule accounts last year, but criminals continue to lure poor citizens into laundering money for as little as $120.
+Telegram-based drug trafficking operations paid in crypto add another layer of threat, with Russian actors allegedly targeting Ukrainian soldiers to weaken morale.
+“Ukraine, while not the origin, is seen as an emerging hub for laundering crypto funds due to its strategic location, wartime vulnerabilities and evolving regulations,” the report said.
+Russia and crypto laundering
+The pattern of Russian actors taking advantage of neighbouring countries to launder crypto has also been seen in Kyrgyzstan.
+In August, the UK and U.S. announced sanctions against local crypto networks linked to the rouble-pegged stablecoin A7A5 and two local exchanges thought to be the successors of Garantex.
+The action resulted in an appeal to the leaders of the two countries from the Kyrgyz president, who accused them of politicizing the country's economy.
+Ukraine has made some headway in sanctioning Russian-linked crypto firms. In July, it took action against 19 Russian crypto miners, 17 digital asset operators and five exchanges, as well as other firms tied to Russia’s financial infrastructure.

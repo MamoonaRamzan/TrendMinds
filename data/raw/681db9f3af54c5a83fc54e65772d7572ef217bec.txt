@@ -1,0 +1,14 @@
+In brief
+- The Bank of China’s Hong Kong branch stock shot up by 6.7% on reports that it plans to apply for a stablecoin issuer license.
+- Hong Kong launched its stablecoin licensing regime in August.
+- Regulators have also urged caution to investors over speculation-driven price moves.
+The Bank of China’s Hong Kong-listed shares rose by 6.7% on Monday, trading at HKD$37.58, after local media reports suggested that the bank’s Hong Kong unit is preparing to apply for a stablecoin issuer license.
+The Hong Kong Economic Journal reported that the Chinese state bank’s branch had formed a dedicated task force to explore stablecoin issuance.
+The Bank of China did not respond to a request for comment, but in last week’s results call it told investors it was researching digital asset applications and their risk management.
+Hong Kong introduced its stablecoin licensing regime on August 1, requiring issuers to secure approval from the Hong Kong Monetary Authority (HKMA). The framework imposes strict requirements on reserve management, redemption guarantees, client fund segregation, anti-money laundering, disclosure and operator vetting. The rules came shortly after the U.S. passed its first federal stablecoin law, the GENIUS Act.
+The city’s regime has already attracted interest from major financial institutions, including Standard Chartered.
+Chinese tech giants JD.com and Ant Financial have also announced plans to seek licenses abroad for services targeting their international businesses, which could include applying in Hong Kong. JD founder Richard Liu said in June the company aims to use stablecoins to reduce cross-border payment costs, first for business-to-business transfers before expanding to consumers.
+Vincent Chok, CEO of Hong Kong-based First Digital, told Decrypt the appeal of stablecoins lies in efficiency. "Blockchain technology reduces settlement times and bypasses the traditional intermediary fees of banks," he said, adding that the opportunity is "especially pronounced in emerging markets, where growing stablecoin adoption provides users a hedge against currency volatility."
+While the cost advantage varies by corridor and transaction type, Chok noted that adoption is accelerating as regulation provides clarity. “The current trajectory suggests exponential growth in the next 2-5 years,” he added.
+Still, Hong Kong regulators have urged restraint. In mid-August, the Securities and Futures Commission (SFC) and the HKMA jointly warned investors that market swings tied to licensing rumours may be misleading.
+“These movements appear to follow corporate announcements, news reports, social media posts or speculations regarding plans to apply,” they said. “Given the significant uncertainties surrounding the outcomes of these preliminary plans or applications, the abrupt market movements... highlight the need to stay vigilant in these frenetic situations.”

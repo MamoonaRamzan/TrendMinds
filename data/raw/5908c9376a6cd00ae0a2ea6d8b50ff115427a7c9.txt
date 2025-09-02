@@ -1,0 +1,18 @@
+A federal judge on Friday handed prison terms totaling nearly eight years to two former executives at failed crypto lender Cred, whose actions fueled one of crypto’s worst investor losses.
+Legal experts told Decrypt that the sentences establish new precedents for executive accountability in crypto fraud cases.
+Daniel Schatt, former CEO and co-founder of Cred LLC, received 52 months in federal prison, while the firm's Chief Financial Officer Joseph Podulka was sentenced to 36 months.
+Senior U.S. District Judge William Alsup handed down the sentences after both men pleaded guilty in May to wire fraud conspiracy charges.
+The executives misled customers about Cred's financial health while secretly funneling 80% of customer assets into high-risk microloans to Chinese gamers through an affiliated company.
+When the scheme collapsed during 2020's crypto market crash, more than 440,000 customers lost $140 million, now worth over $1 billion at current prices.
+Ishita Sharma, a blockchain and crypto lawyer and managing partner at Fathom Legal, told Decrypt that federal sentencing patterns in crypto fraud cases now clearly differentiate based on several key factors.
+"Schatt's 52-month sentence is shorter than Sam Bankman-Fried's 25 years but longer than several plea-based cases," Sharma noted.
+She said the sentences show courts weigh “loss amount, role in offense, and acceptance of responsibility,” with the 16-month gap between CEO and CFO reflecting “leadership hierarchy and culpability levels.”
+“Courts must balance individual circumstances with sending clear signals to the market,” Sharma said, noting that guilty pleas reduce exposure but sentences must still reflect “the severity of betraying customer trust in an emerging industry.”
+During a March 18, 2020 public session, Schatt told customers Cred was "operating normally" despite knowing the company faced a liquidity crisis.
+The company lost an additional $9 million to a crypto scam and suffered further losses when Chief Capital Officer James Alexander allegedly appropriated approximately 255 BTC before being terminated.
+Sharma said the Cred case reflects broader enforcement trends where "courts increasingly consider the reputational damage to the entire crypto sector when sentencing individual executives."
+She told Decrypt that judges now weigh whether sentences "properly deter similar misconduct while maintaining proportionality to the specific harm caused."
+For crypto platforms steering through regulatory uncertainty, Sharma said proactive disclosure is vital, urging a “‘regulation-by-analogy’ approach” that borrows from securities, banking, and commodities law.
+"The key lesson from Cred is that opacity in gray zones invites aggressive enforcement—companies should over-disclose rather than exploit regulatory gaps," she said.
+Both men will begin serving their terms on October 28, followed by three years of supervised release. A restitution hearing is scheduled for October 7.
+In addition to prison time, Judge Alsup ordered each man to pay $25,000 fines and serve three years of supervised release.

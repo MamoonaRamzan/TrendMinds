@@ -1,0 +1,13 @@
+In brief
+- Investors have dropped a class-action lawsuit against Bitcoin giant Strategy, which accused the company of misleading shareholders about how new accounting rules would affect its profitability.
+- The case centered on Strategy’s switch to fair value accounting, which let it mark Bitcoin’s price swings on its balance sheet.
+- Critics said the firm overstated how much this change would boost earnings. Despite Bitcoin’s recent surge, Strategy reported a $4.22 billion loss in early 2025, sparking backlash.
+Investors in Bitcoin behemoth Strategy have dismissed a class-action lawsuit against the company for allegedly making false and misleading statements about its profitability.
+The suit was initially filed in May, accusing the company—famous for pivoting from software development into a full-time strategy of Bitcoin accumulation—of misleading investors about the impact new crypto accounting practices would have on its profitability.
+This year, Strategy, which currently owns over $68 billion worth of BTC, switched to a fair value accounting standard that allowed it to record quarter-to-quarter swings in the price of held Bitcoin on its balance sheets.
+Previously, the firm recorded its Bitcoin at original purchase cost; while it could write down drops in the token’s value as “impairment charges,” it could not mark up price increases unless tokens were sold off.
+Investors who filed suits against Strategy and its leadership earlier this year argued the company misled them by overstating the positive impact this new accounting strategy would have on the firm’s profitability.
+When Strategy announced a net loss of $4.22 billion in the first quarter of 2025—despite Bitcoin’s historic surge over the prior six months—shareholders began revolting.
+But on Thursday, plaintiffs in one of the most prominent lawsuits against the company opted to voluntarily dismiss their claims. The jointly stipulated dismissal, filed in a federal court in eastern Virginia, where Strategy is based, was made with prejudice—meaning the claims cannot be made in court again.
+Decrypt reached out to the plaintiffs’ attorneys asking why they had dropped their claims, or if any settlement had been reached with Strategy, but did not immediately receive a response.
+In recent weeks, Strategy has faced other criticisms about how it presents its unorthodox business model to shareholders.Earlier this month, a prominent Wall Street advisor slammed the company for comparing its price-to-earnings ratio to the likes of Apple and Nvidia—a move that was “100% fraudulent,” the advisor said, because the company’s recent performance was driven by a “one-off” increase in Bitcoin’s price, not business fundamentals likely to recur.

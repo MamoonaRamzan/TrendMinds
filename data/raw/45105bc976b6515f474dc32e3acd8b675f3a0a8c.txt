@@ -1,0 +1,14 @@
+EU regulator warns tokenized stocks may mislead retail investors
+ESMA identifies critical gaps in tokenization, emphasizing risks of perceived stock ownership.
+Tokenized stocks, a new breed of digital assets mirroring the prices of listed companies, could give investors a false sense of ownership and undermine market confidence, according to a top European regulator.
+Natasha Cazenave, executive director of the European Securities and Markets Authority (ESMA), cautioned that many tokenized stock products being marketed in the European Union fail to grant actual shareholder rights, such as voting or dividends.
+She said that the lack of clarity in how these assets are presented could lead retail investors to believe they hold company shares when, in reality, they do not.
+Shareholder rights absent
+Unlike traditional equity purchases, tokenized stocks are often issued through special-purpose vehicles or intermediaries, and the tokens merely track the underlying stock’s price.
+Cazenave stressed that while tokenization promises features like fractional trading and round-the-clock market access, the absence of ownership rights poses a “specific risk of investor misunderstanding.”
+Her remarks come as platforms including Robinhood and Kraken expand tokenized stock offerings in Europe and other regions.
+The World Federation of Exchanges last week echoed ESMA’s concerns, urging regulators to strengthen oversight before the sector grows larger. The group warned that without intervention, tokenized products could expose investors to unexpected risks and damage market integrity.
+Efficiency gains still elusive
+Advocates have argued that tokenization can modernize finance by lowering costs and broadening access to assets ranging from equities and bonds to real estate.
+Cazenave acknowledged this potential but noted that most existing projects remain limited in scale, illiquid, and far from delivering the efficiency benefits touted by advocates.
+For now, European regulators appear intent on balancing innovation with investor safeguards, signaling that tokenized stocks will remain under scrutiny as the technology develops.

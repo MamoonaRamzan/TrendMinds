@@ -1,0 +1,19 @@
+In brief
+- Nike and StockX have ended their legal battle over trademark misuse.
+- A judge ruled in March 2025 that StockX sold counterfeit Nike sneakers.
+- Analysts told Decrypt the deal signals less room for gray-area resale platforms and more focus on brand-approved NFTs.
+Nike Inc. and StockX, a Detroit-based online marketplace, settled a three-year case in New York federal court last Friday over sneaker-linked NFTs and trademark misuse, over half a year after a judge ruled the resale platform sold counterfeit sneakers.
+The settlement immediately takes a jury trial scheduled for October off the calendar, dismissing all claims with prejudice. It spares StockX the risk of a damaging verdict, while allowing Nike to avoid the uncertainty of putting its brand protection strategy before a jury.
+The case began in the Southern District of New York in February 2022, when Nike accused StockX of trademark infringement and dilution, alleging its “Vault” NFTs used Nike sneaker images without authorization to sell tokens tied to physical shoes.
+At the time, Nike argued the NFTs “are likely to confuse consumers, create a false association between those products,” and dilute its trademarks.
+A month later, StockX countered in that its Vault NFTs were designed “to track ownership of frequently traded physical products,” not to mislead consumers, arguing that Nike’s suit reflected “a fundamental misunderstanding of the various functions NFTs can serve.”
+By May of the same year, Nike had amended its complaint to allege that StockX was also selling counterfeit sneakers, saying pairs it purchased from the platform failed authentication and further supported its trademark claims.
+Those allegations were later addressed earlier in March this year, with Judge Valerie Caproni granting Nike partial summary judgment after finding StockX liable for distributing counterfeit goods tied to four pairs of shoes sold to Nike’s investigators and 33 pairs sold to a customer named Roy Kim.
+Unlaced in court
+The ruling left other claims unresolved and set the case for trial, but the settlement reached in late August cut those plans short.
+Now, observers point to the abrupt resolution as a key moment for how markets could view tokenized goods.
+The Nike–StockX settlement “brings relief to the sneaker NFT market by removing the risk of a disruptive jury trial, but the real signal for the industry came earlier: when RTFKT shut down in December,” Dan Dadybayo, research and strategy lead at Unstoppable Wallet, told Decrypt.
+“RTFKT was the most influential phygital studio, blending Nike Cryptokicks, Clone X with Murakami, and experimental sneaker drops,” Dadybayo explained.
+The closure of RTFKT “showed how fragile hybrid models are when brand control and IP compliance aren’t crystal clear.”
+The settlement reinforces how “NFTs functioning as receipts for physical goods will survive, but tokens drifting into standalone collectibles without brand approval will face legal pressure,” he said, adding that “less tolerance for gray-area resale platforms” could be expected.
+Aligning with Dadybayo’s point, Hank Huang, CEO of Kronos Research, told Decrypt that NFTs “are no longer a legal gray area,” noting how trademark rights have become “essential for building credible, compliant platforms” as the tokenized collectible market “enters a more disciplined phase.”

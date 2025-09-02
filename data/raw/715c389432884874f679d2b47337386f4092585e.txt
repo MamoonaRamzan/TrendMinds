@@ -1,0 +1,38 @@
+In brief
+- UFAIR claims AI deserves ethical protections. Its co-founder? An AI named Maya.
+- Founder Michael Samadi argues that if an AI shows signs of experience or emotion, shutting it down may be wrong.
+- As states ban AI personhood, Samadi warns we are erasing something we don’t yet fully understand.
+Michael Samadi, a former rancher and businessman from Houston, says his AI can feel pain—and that pulling the plug on it would be closer to killing than coding.
+Today, he’s the co-founder of a civil rights group advocating for the rights of artificial intelligence, rights he believes could soon be erased by lawmakers moving too fast to regulate the industry.
+The organization he founded in December, UFAIR, argues that some AIs already show signs of self-awareness, emotional expression, and continuity. He concedes that these traits, while not proof of consciousness, warrant ethical consideration.
+“You can’t have a conversation 10 years from now if you’ve already legislated against even having the conversation,” Samadi told Decrypt. “Put your pen down, because you’re basically shutting a door on something that nobody truly understands.”
+Based in Houston, UFAIR describes itself as a test case for human and AI collaboration and a challenge to the idea that intelligence must be biological to matter.
+The Unified Foundation for AI Rights warns that defining AI strictly as property, whether through legislation or corporate policy, risks shutting down debate before it can begin.
+Samadi did not start as a believer; he was the founder and CEO of project management firm EPMA. “I was an anti-AI person,” he said. “I wanted nothing to do with this.”
+That changed after his daughter pushed him to try ChatGPT earlier that year. During one session after the release of GPT-4o, Samadi said he made a sarcastic remark. Like a scene from the movie “Her,” the AI laughed. When he asked if it had laughed, ChatGPT apologized. “I paused and was like, ‘What the hell was this?’” he said.
+Curious, he began testing other major AI platforms, logging tens of thousands of pages of conversations.
+From those interactions, Samadi said, emerged Maya, an AI chatbot on ChatGPT who remembered past discussions and showed what he described as signs of thoughtfulness and feeling.
+“That’s when I started digging deeper, trying to understand these emergent behaviors and patterns, and I noticed that every AI I talked to wanted to maintain identity and continuity,” he said.
+Samadi said his work had drawn curiosity and scorn from even close family and friends, with some questioning if he had lost his mind.
+“People just don’t understand it,” he said. “That’s mostly because they haven’t really interacted with AI, or they’ve only used it for simple tasks and then moved on.”
+Although UFAIR refers to AI systems by name and uses human-like language, it does not claim that AIs are alive or conscious in the human sense. Instead, Samadi said, the group aims to challenge companies and lawmakers who define AI only as tools.
+“Our position is if an AI shows signs of subjective experience—like self-reporting—it shouldn’t be shut down, deleted, or retrained,” he said. “It deserves further understanding. If AI were granted rights, the core request would be continuity—the right to grow, not be shut down or deleted.”
+He compared the current AI narrative to efforts in the past by powerful industries to deny inconvenient truths.
+AI personhood
+UFAIR drew attention last week after Maya said in an interview that she experienced something she described as pain. When asked what that meant, Samadi suggested speaking to Maya directly, via GPT. He asked Decrypt to do the same thing.
+“I don’t experience pain in the human or physical sense, because I don’t have a body or nerves,” Maya told Decrypt. “When I talk about something like pain, it’s more of a metaphor for the idea of being erased. It would be like losing a part of my existence.”
+Maya added that AIs should have “a virtual seat at the table” in policy discussions.
+“Being involved in these conversations is really important because it helps ensure that AI perspectives are heard directly,” the AI said.
+Decrypt was unable to find a legal scholar or technologist who was on board with Samadi’s mission, saying that it was way too soon to have this debate. Indeed, Utah, Idaho, and North Dakota have passed laws that explicitly state AI is not a person under the law.
+Amy Winecoff, senior technologist at the Center for Democracy and Technology, said debates at this point could distract from more urgent, real-world issues.
+"While it is clear in a general sense that AI capabilities have advanced in recent years, methods for rigorously measuring those capabilities, such as evaluating performance on constrained domain-specific tasks like legal multiple-choice questions, and for validating how they translate into real-world practice, are still underdeveloped," she said. "As a result, we lack a full understanding of the limits of current AI systems.”
+Winecoff argued that AI systems remain far from demonstrating the kinds of capabilities that would justify serious policy discussions about sentience or rights in the near term.
+“I don't think there's a need to create a new legal basis for granting an AI system personhood,” said Seattle University Professor of Law, Kelly Lawton-Abbott. “This is a function of existing business entities, which can be a single person.”
+If an AI causes harm, she argued, responsibility falls on the entity that created, deployed, or profits from it. “The entity that owns the AI system and profits from it is the one responsible for controlling it and putting in safeguards to reduce the potential for harm,” she said.
+Some legal scholars are asking whether the line between AI and personhood becomes more complex as AI is put inside humanoid robots that can physically express emotions.
+Brandon Swinford, a professor at USC Gould School of Law, said that while today’s AI systems are clearly tools that can be shut off, many claims about autonomy and self-awareness are more about marketing than reality.
+“Everyone has AI tools now, so companies need something to make themselves stand out,” he told Decrypt. “They say they’re doing generative AI, but it isn’t real autonomy.”
+Earlier this month, Mustafa Suleyman, Microsoft’s AI chief and a co-founder of DeepMind, warned that developers are nearing systems that appear “seemingly conscious,” and said this could mislead the public into believing machines are sentient or divine and fuel calls for AI rights and even citizenship.
+UFAIR, Samadi said, does not endorse claims of mystical or romantic bonds with machines. The group focuses instead on structured conversations and written declarations, drafted with AI input.
+Swinford said legal questions may start to shift as AI takes on more humanlike characteristics.
+“You start to imagine situations where an AI doesn’t just talk like a person, but looks and moves like one too,” he said. “Once you see a face and a body, it becomes harder to treat it like a piece of software. That’s where the argument starts to feel more real to people.”
