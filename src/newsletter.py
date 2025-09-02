@@ -4,6 +4,7 @@ import markdown
 from jinja2 import Template
 from pathlib import Path
 import smtplib
+from .subscription import get_subscribers
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -96,8 +97,8 @@ def save_outputs(markdown_text: str, out_dir: str, file_md: str, file_html: str)
 
     return str(md_path), str(html_path)
 
-def send_email(html_path: str, config: dict):
-    """Send newsletter email if enabled in config.yml (with secrets from env)."""
+def send_email(html_path: str, config: dict, niche: str):
+    """Send newsletter email if enabled in config.yml (per-niche dynamic subscribers)."""
     email_cfg = config.get("email", {})
     if not email_cfg.get("enabled", False):
         print("📭 Email sending disabled in config.yml")
@@ -106,30 +107,25 @@ def send_email(html_path: str, config: dict):
     smtp_server = email_cfg.get("smtp_server", "smtp.gmail.com")
     smtp_port = email_cfg.get("smtp_port", 465)
 
-    # 🔑 Read secrets from environment instead of config.yml
     sender = os.getenv("SENDER_EMAIL")
     password = os.getenv("EMAIL_PASSWORD")
-    receivers = os.getenv("RECEIVER_EMAILS", "").split(",")
+    receivers = get_subscribers(niche)
 
-    if not sender or not password or not receivers:
-        raise ValueError("❌ Missing email credentials in environment variables.")
+    if not receivers:
+        print(f"⚠️ No subscribers for {niche}, skipping email.")
+        return
 
-    # Read the newsletter content
     html_content = Path(html_path).read_text(encoding="utf-8")
 
-    # Build MIME email
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = config.get("branding", {}).get("title", "Weekly Newsletter")
+    msg["Subject"] = f"{niche} Weekly Insight"
     msg["From"] = sender
     msg["To"] = ", ".join(receivers)
-
-    # Attach HTML version
     msg.attach(MIMEText(html_content, "html"))
 
-    # Send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(smtp_server, smtp_port, context=context) as server:
         server.login(sender, password)
         server.sendmail(sender, receivers, msg.as_string())
 
-    print(f"✅ Newsletter sent to: {', '.join(receivers)}")
+    print(f"✅ Sent {niche} newsletter to {len(receivers)} subscribers.")

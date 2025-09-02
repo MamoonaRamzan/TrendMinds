@@ -145,8 +145,9 @@ def run(niche: str):
     md_path, html_path = save_outputs(md, out_dir=outcfg["folder"], file_md=md_file, file_html=html_file)
     print(f"✅ Newsletter written for {niche}:\n- {md_path}\n- {html_path}")
 
-    send_email(html_path, cfg)
+    send_email(html_path, cfg, niche)
     print(f"📧 Email sent for {niche}!")
+
 
 
 if __name__ == "__main__":
