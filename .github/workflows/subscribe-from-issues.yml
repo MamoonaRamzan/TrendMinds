@@ -1,0 +1,51 @@
+name: Add Subscriber from Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-subscriber:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Extract email and niche
+        id: parse
+        run: |
+          echo "EMAIL=$(echo '${{ github.event.issue.body }}' | grep -i 'Email:' | cut -d':' -f2 | xargs)" >> $GITHUB_ENV
+          echo "NICHE=$(echo '${{ github.event.issue.body }}' | grep -i 'Niche:' | cut -d':' -f2 | xargs)" >> $GITHUB_ENV
+
+      - name: Update subscribers.json
+        run: |
+          python - <<'EOF'
+          import json, os
+          path = "subscribers.json"
+          email = os.getenv("EMAIL")
+          niche = os.getenv("NICHE")
+          print(f"📩 Adding {email} to {niche}")
+          try:
+              data = json.load(open(path))
+          except FileNotFoundError:
+              data = {}
+          if niche not in data:
+              data[niche] = []
+          if email not in data[niche]:
+              data[niche].append(email)
+          json.dump(data, open(path, "w"), indent=2)
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add subscribers.json
+          git commit -m "Added ${{ env.EMAIL }} to ${{ env.NICHE }} from issue"
+          git push
+
+      - name: Close issue
+        uses: peter-evans/close-issue@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          comment: "✅ Subscription successful! You’ve been added to the ${{ env.NICHE }} newsletter."

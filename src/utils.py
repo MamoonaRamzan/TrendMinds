@@ -27,13 +27,34 @@ def sha1(s: str):
 def env(key: str, default: str | None = None):
     return os.getenv(key, default)
 
+import re
+
 def clean_llm_output(text: str) -> str:
     """
-    Removes unwanted reasoning traces like <think> ... </think>
-    and trims extra whitespace.
+    Cleans up LLM output by removing reasoning traces, unwanted prefixes,
+    and leaving only the polished summary/points.
     """
-    # remove <think>...</think> blocks
+    if not text:
+        return ""
+
+    # 1. Remove <think>...</think> reasoning blocks (common in some LLMs)
     text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
-    # strip leftover 'Okay, let’s...' type intros (common in traces)
-    text = re.sub(r"(?i)^.*?(Summary|##|###|-|\*\*)", r"\1", text, flags=re.DOTALL)
-    return text.strip()
+
+    # 2. Remove meta-intros or reasoning phrases at the start
+    bad_starts = [
+        r"(?i)^summary of the provided context.*?\.",   # "summary of the provided context..."
+        r"(?i)^first, i need to.*?\.",                  # "first, I need to..."
+        r"(?i)^next, the.*?\.",                         # "next, the ..."
+        r"(?i)^okay, let.?s.*?\.",                      # "okay, let's..."
+        r"(?i)^the user wants.*?\.",                    # "the user wants..."
+        r"(?i)^task:.*?\.",                             # "task: ..."
+    ]
+    for pat in bad_starts:
+        text = re.sub(pat, "", text, flags=re.DOTALL).strip()
+
+    # 3. Normalize spacing
+    text = re.sub(r"\n{3,}", "\n\n", text)  # collapse huge line breaks
+    text = text.strip()
+
+    return text
+

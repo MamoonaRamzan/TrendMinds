@@ -115,7 +115,8 @@ def run(niche: str):
     # Quick bites
     qb_ctx_docs = retriever.invoke(f"Short updates in {niche} this week, diverse topics.")
     qb_ctx = "\n\n".join([d.page_content[:500] for d in qb_ctx_docs])
-    quick_bites = quick_bites_chain(llm).invoke({"niche": niche, "context": qb_ctx, "n": sections["quick_bites"]})
+    quick_bites_raw = quick_bites_chain(llm).invoke({"niche": niche, "context": qb_ctx, "n": sections["quick_bites"]})
+    quick_bites = clean_llm_output(quick_bites_raw) 
 
     # Further reading
     further = []
@@ -151,7 +152,18 @@ def run(niche: str):
 
 
 if __name__ == "__main__":
+    import argparse
+
     parser = argparse.ArgumentParser()
-    parser.add_argument("--niche", type=str, default="AI", help="Choose newsletter niche (AI, Crypto, Climate, etc.)")
+    parser.add_argument("--niche", type=str, required=True, help="Newsletter niche (AI, Crypto, Climate, etc.)")
+    parser.add_argument("--receivers", type=str, help="Comma-separated list of emails")
     args = parser.parse_args()
-    run(args.niche)
+
+    cfg = load_config()
+
+    # Override config values dynamically
+    cfg["niche"] = args.niche
+    if args.receivers:
+        cfg.setdefault("email", {})["receivers"] = args.receivers.split(",")
+
+    run(cfg["niche"])
