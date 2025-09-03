@@ -23,17 +23,37 @@
     <button type="submit">Subscribe</button>
   </form>
 
+  <p id="status"></p>
+
   <script>
     const form = document.getElementById("subscribe-form");
+    const status = document.getElementById("status");
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const email = document.getElementById("email").value;
       const niche = document.getElementById("niche").value;
 
-      // Redirect user to pre-filled GitHub Issue
-      const issueUrl = `https://github.com/MamoonaRamzan/AI-Newsletter/issues/new?title=Subscribe:+${encodeURIComponent(email)}&body=Email:+${encodeURIComponent(email)}%0ANiche:+${encodeURIComponent(niche)}`;
-      window.open(issueUrl, "_blank");
+      status.textContent = "Submitting...";
+
+      const response = await fetch("https://api.github.com/repos/MamoonaRamzan/AI-Newsletter/actions/workflows/subscribe.yml/dispatches", {
+        method: "POST",
+        headers: {
+          "Authorization": "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", 
+          "Accept": "application/vnd.github+json",
+        },
+        body: JSON.stringify({
+          ref: "main",   // branch name
+          inputs: { email, niche }
+        })
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Subscribed successfully!";
+      } else {
+        status.textContent = "❌ Failed. Check console.";
+        console.error(await response.text());
+      }
     });
   </script>
 </body>

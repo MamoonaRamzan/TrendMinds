@@ -1,8 +1,14 @@
-name: Add Subscriber from Issues
+name: Add Subscriber
 
 on:
-  issues:
-    types: [opened]
+  workflow_dispatch:
+    inputs:
+      email:
+        description: "Subscriber email"
+        required: true
+      niche:
+        description: "Newsletter niche"
+        required: true
 
 jobs:
   add-subscriber:
@@ -11,11 +17,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Extract email and niche
-        id: parse
-        run: |
-          echo "EMAIL=$(echo '${{ github.event.issue.body }}' | grep -i 'Email:' | cut -d':' -f2 | xargs)" >> $GITHUB_ENV
-          echo "NICHE=$(echo '${{ github.event.issue.body }}' | grep -i 'Niche:' | cut -d':' -f2 | xargs)" >> $GITHUB_ENV
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
       - name: Update subscribers.json
         run: |
@@ -24,28 +29,32 @@ jobs:
           path = "subscribers.json"
           email = os.getenv("EMAIL")
           niche = os.getenv("NICHE")
-          print(f"📩 Adding {email} to {niche}")
+
+          # load file or init
           try:
               data = json.load(open(path))
           except FileNotFoundError:
               data = {}
+
           if niche not in data:
               data[niche] = []
+
           if email not in data[niche]:
               data[niche].append(email)
+              print(f"✅ Added {email} to {niche}")
+          else:
+              print(f"⚠️ {email} already subscribed to {niche}")
+
           json.dump(data, open(path, "w"), indent=2)
           EOF
+        env:
+          EMAIL: ${{ github.event.inputs.email }}
+          NICHE: ${{ github.event.inputs.niche }}
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           git add subscribers.json
-          git commit -m "Added ${{ env.EMAIL }} to ${{ env.NICHE }} from issue"
+          git commit -m "Added ${{ github.event.inputs.email }} to ${{ github.event.inputs.niche }}"
           git push
-
-      - name: Close issue
-        uses: peter-evans/close-issue@v2
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          comment: "✅ Subscription successful! You’ve been added to the ${{ env.NICHE }} newsletter."
