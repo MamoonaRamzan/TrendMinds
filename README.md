@@ -133,7 +133,6 @@ This project includes a workflow (.github/workflows/weekly.yml) that:
 ---
 
 ## 🔮 Future Improvements
-- Multi-niche newsletter support (AI, Climate, Crypto, etc.)
 
 - Integration with Substack/Mailchimp APIs
 
@@ -170,3 +169,4 @@ This project is licensed under the MIT License.
 Made with ❤️ by the **Mamoona**
 
 </div>
+
