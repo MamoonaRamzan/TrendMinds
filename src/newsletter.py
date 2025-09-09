@@ -36,9 +36,14 @@ BASE_TEMPLATE = """# {{title}}
 {{quick_bites}}
 
 ## Further Reading
+{% if further %}
 {% for fr in further %}
-- [{{fr.title}}]({{fr.url}}) — {{fr.note}}
+- [{{ fr.title }}]({{ fr.url }}) — {{ fr.note }}
 {% endfor %}
+{% else %}
+- No additional links this week.
+{% endif %}
+
 
 ---
 

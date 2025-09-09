@@ -19,5 +19,6 @@ requests==2.31.0
 huggingface_hub
 hf-xet  
 flask-cors
+langchain-huggingface
 
 

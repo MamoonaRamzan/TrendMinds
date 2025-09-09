@@ -58,7 +58,7 @@ def run(niche: str):
     )
 
     # RAG: pick top stories
-    llm = make_llm(model=env("GROQ_MODEL", "llama-3.1-70b-versatile"), temperature=temp)
+    llm = make_llm(model=env("GROQ_MODEL", "llama-3.1-8b-instant"), temperature=temp)
     retriever = retriever_for(db, k=k)
 
     synthetic_query = (
@@ -123,10 +123,24 @@ def run(niche: str):
     seen_urls = {ts["url"] for ts in top_stories if ts["url"]}
     for d in ctx_docs:
         u = d.metadata.get("url", "")
+        t = d.metadata.get("title", "").strip()
         if u and u not in seen_urls:
-            further.append({"title": d.metadata.get("title", "(untitled)"), "url": u, "note": "Worth a look"})
-            if len(further) >= sections["further_reading"]:
-                break
+            further.append({
+                "title": t if t else "(untitled)",
+                "url": u,
+                "note": "Worth a look"
+            })
+        if len(further) >= sections["further_reading"]:
+            break
+
+    # ✅ Fallback if empty
+    if not further:
+        further.append({
+            "title": "Explore more on arXiv AI papers",
+            "url": "http://export.arxiv.org/rss/cs.AI",
+            "note": "Extra reading source"
+        })
+
 
     payload = {
         "title": brand["title"],

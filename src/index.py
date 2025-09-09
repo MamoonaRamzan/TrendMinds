@@ -4,6 +4,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_core.documents import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_huggingface import HuggingFaceEmbeddings
 
 def build_vectorstore(articles, persist_dir="data/chroma", chunk_size=1000, chunk_overlap=150):
     splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
@@ -19,7 +20,6 @@ def build_vectorstore(articles, persist_dir="data/chroma", chunk_size=1000, chun
         for chunk in splitter.split_text(a.text):
             docs.append(Document(page_content=chunk, metadata=metadata))
 
-    embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     db = Chroma.from_documents(documents=docs, embedding=embeddings, persist_directory=persist_dir)
-    db.persist()
     return db
