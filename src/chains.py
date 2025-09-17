@@ -25,10 +25,18 @@ fields: title, url, why_it_matters (1-2 lines). Limit to {n} items."""
 def story_summarizer_chain(llm):
     sys = """You are a precise technical summarizer. Using ONLY the provided context (do not fabricate),
 write a 120-180 word summary with a factual tone, a 'Why it matters' 1-liner,
-and 3 bullet key points. Add a 'Source:' line with the canonical URL.,Do not describe your thought process, Do not explain what you are doing, Do not mention "context", "I need to", or "the user",Output only the final clean summary."""
+and 3 bullet key points. Add a 'Source:' line with the canonical URL.,Do not describe your thought process, Do not explain what you are doing, Do not mention "context", "I need to", or "the user", "Summary: "Output only the final clean summary."""
     prompt = ChatPromptTemplate.from_messages([
         ("system", sys),
         ("human", "Title: {title}\nURL: {url}\nContext:\n{context}")
+    ])
+    return prompt | llm | StrOutputParser()
+
+def why_it_matters_chain(llm):
+    sys = """Explain in 1-2 plain sentences why this article matters. Be direct, no fluff, no reasoning traces."""
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", sys),
+        ("human", "Title: {title}\nURL: {url}\n\nArticle snippet:\n{context}")
     ])
     return prompt | llm | StrOutputParser()
 

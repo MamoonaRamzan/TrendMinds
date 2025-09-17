@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Newsletter Headlines</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f9fafb; 
+      padding: 2rem; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    h1 { color: #2563eb; }
+    .controls {
+      margin: 2rem 0;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    select, button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      font-size: 1rem;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+    .headline { 
+      padding: 1rem; 
+      border-bottom: 1px solid #e5e7eb; 
+      background: white;
+      margin-bottom: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .headline h3 {
+      margin-top: 0;
+      color: #1f2937;
+    }
+    .headline a {
+      text-decoration: none;
+      color: #2563eb;
+    }
+    .headline a:hover {
+      text-decoration: underline;
+    }
+    .error {
+      color: #dc2626;
+      background: #fef2f2;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #fecaca;
+    }
+    .loading {
+      color: #059669;
+      font-style: italic;
+    }
+    #headlines {
+      min-height: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>📰 Weekly Newsletter Headlines</h1>
+  
+  <div class="controls">
+    <select id="niche">
+      <option value="AI">Artificial Intelligence</option>
+      <option value="Crypto">Crypto</option>
+      <option value="Climate">Climate</option>
+      <option value="Technology">Technology</option>
+      <option value="Health">Health</option>
+    </select>
+    <button onclick="fetchHeadlines()" id="loadBtn">Load Headlines</button>
+  </div>
+  
+  <div id="headlines"></div>
+
+  <script>
+    async function fetchHeadlines() {
+      const niche = document.getElementById("niche").value; // Fixed: was "nicheSelect"
+      const loadBtn = document.getElementById("loadBtn");
+      const headlinesDiv = document.getElementById("headlines");
+      
+      // Show loading state
+      loadBtn.disabled = true;
+      loadBtn.textContent = "Loading...";
+      headlinesDiv.innerHTML = '<p class="loading">Fetching headlines...</p>';
+      
+      try {
+        console.log(`Fetching headlines for niche: ${niche}`);
+        const res = await fetch(`http://127.0.0.1:8000/headlines/${niche}`);
+        console.log(`Response status: ${res.status}`);
+        
+        const data = await res.json();
+        console.log('Response data:', data);
+
+        headlinesDiv.innerHTML = ""; // Clear loading message
+
+        if (data.error) {
+          headlinesDiv.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+          return;
+        }
+
+        if (data.stories && data.stories.length > 0) {
+          data.stories.forEach(story => {
+            const headlineDiv = document.createElement("div");
+            headlineDiv.className = "headline";
+            headlineDiv.innerHTML = `
+              <h3><a href="${story.url || '#'}" target="_blank">${story.title || 'No title'}</a></h3>
+              <p><strong>Summary:</strong> ${story.summary || 'No summary available'}</p>
+              ${story.why ? `<p><strong>Why it matters:</strong> ${story.why}</p>` : ''}
+            `;
+            headlinesDiv.appendChild(headlineDiv);
+          });
+        } else {
+          headlinesDiv.innerHTML = `
+            <div class="error">
+              No stories available for ${niche}. 
+              <br><br>
+              <strong>Debugging info:</strong>
+              <br>• Check if your backend is running on http://127.0.0.1:8000
+              <br>• Check if the file 'output/latest.json' exists
+              <br>• Check browser developer console for errors
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error('Fetch error:', error);
+        headlinesDiv.innerHTML = `
+          <div class="error">
+            Network error: ${error.message}
+            <br><br>
+            <strong>Possible causes:</strong>
+            <br>• Backend server is not running
+            <br>• CORS issues
+            <br>• Wrong URL (check if backend is on port 8000)
+            <br><br>
+            <strong>Try:</strong>
+            <br>1. Start backend: <code>uvicorn backend.api:app --reload</code>
+            <br>2. Check backend logs for errors
+          </div>
+        `;
+      } finally {
+        // Reset button state
+        loadBtn.disabled = false;
+        loadBtn.textContent = "Load Headlines";
+      }
+    }
+
+    // Test connection on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/health');
+        if (response.ok) {
+          console.log('✅ Backend connection successful');
+        } else {
+          console.log('⚠️ Backend responded but with error status:', response.status);
+        }
+      } catch (error) {
+        console.log('❌ Backend connection failed:', error.message);
+        document.getElementById('headlines').innerHTML = `
+          <div class="error">
+            ⚠️ Cannot connect to backend server. Make sure it's running on http://127.0.0.1:8000
+            <br><br>
+            Start your backend with: <code>uvicorn backend.api:app --reload</code>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

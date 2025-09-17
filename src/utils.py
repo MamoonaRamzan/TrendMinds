@@ -31,8 +31,12 @@ import re
 
 def clean_llm_output(text: str) -> str:
     """
-    Cleans up LLM output by removing reasoning traces, unwanted prefixes,
-    and leaving only the polished summary/points.
+    Cleans up LLM output:
+    - Removes reasoning traces, unwanted prefixes
+    - Strips intros like 'Here are...' or 'Okay, let's...'
+    - Don't include long meta-text.
+    - Deduplicates 'Source:' lines
+    -leaving only the polished summary/points.
     """
     if not text:
         return ""

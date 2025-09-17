@@ -1,0 +1,26 @@
+143 EV Chargers Installed At San Francisco Bay Area Condo Complex
+Support CleanTechnica's work through a Substack subscription or on Stripe.
+It was just about three months ago Peninsula Clean Energy announced the installation of 92 EV chargers at the the Woodland Creek apartment complex in East Palo Alto, California. On September 20, there will be a ribbon-cutting ceremony for another large multifamily EV charger installation in the Bay Area.
+143 smart outlet EV chargers were installed at the Bayview Condominiums in Millbrae. Both the Woodland Creek apartment complex EV charger installation and the one at Bayview Condominiums were funded and installed as part of Peninsula Clean Energy’s “EV Ready” program. The Bayview Condominiums EV charger installation is one of the largest at an existing multifamily complex on the West Coast.
+Phillip Kobernick, Associate Director of Energy Programs at Peninsula Clean Energy, and Mike Weseloh, Director of Sales Engineering at GoPowerEV, answered some questions for CleanTechnica about the new Bayview Condominiums EV charger installation.
+How many EV chargers were installed at the Bayview multifamily complex?
+143.
+What makes them smart chargers?
+These are GoPowerEV smart outlets. Their core charging product, a “PowerPort” has 3 outlets: two level 1 outlets and one low power level 2 outlet. What makes the outlets smart, is that they were designed from day one to take advantage of TOU rates and do so in an intelligent manner. Residents provide basic information when requesting a charging session. That information enables the system to make smart decisions about when it delivers electricity for that specific requested session.
+We use information about requested range recovery, time of departure and session type, Economy, Automatic or ASAP, to build the session and then can also modify the session build based on other inputs; such as other ADR events, other charging sessions, etc. Residents are encouraged to charge for the L1 regularly and access the LPL 2 as needed. Average daily driving is 38 miles per day; the 20A L1 can provide up to 60 miles of range recovery overnight. When needed the 240V/20A port can provide up to 150 miles of range recovery overnight.
+Are they all level 2 chargers?
+Each unit has 3 outlets that are shared between 2 parking spaces. So each parking space has a dedicated level 1 outlet and has the option to utilize the low power level 2 outlet, per the EV driver’s needs/preferences.
+Does each residence have its own EV charger?
+Yes, and then some. Every space in the garage has been electrified, so in some cases residents have more than one space and therefore access to more than one SmartOutlet.
+What does it cost the residents with EVs to use the chargers?
+The GoPowerEV SmartOutlets move charging sessions in time to utilize the lowest rates available for residents. At Bayview that lowest rate is: $0.25. If the resident requests a NOW/ASAP charge and/or if their amount of range extension requested coupled with their departure time necessitates that we deliver power at the peak or off-peak rates, those are $0.47 and $0.28.
+In the GPEV App, residents will see the estimated charge cost change as the toggle between the possible charging profiles. Those profiles are ECOnomy, Auto, and NOW In the Economy mode, the GoPowerEV system will deliver Super Off Peak power only.
+In the Auto mode the GoPowerEV system will use as much of the Super Off Peak power as possible and then fill the rest of the session with Off Peak and finally peak power if needed to ensure the requested miles will be added to their range prior to their stated departure time.
+How is it possible to install so many EV chargers at one site?
+The reason that many of these multi-family properties are able to go so big on EV charging is that Peninsula Clean Energy (PCE) has provided free technical assistance and right-sized incentives and has advised on how cost-effective EV charging is possible. These outlets were installed at an average cost of about $2,000 per space, whereas conventional Level 2 charging can typically be 5-6 X more expensive.
+The California Energy Commission has recently added Level 1 charging to the statewide Communities in Charge program ($65 M just for EV charging at multi-family housing), demonstrating that the state is also seeing wider potential in the use of this type of smart Level 1 charging, following PCE’s demonstration in its local EV Ready program.
+Sign up for CleanTechnica's Weekly Substack for Zach and Scott's in-depth analyses and high level summaries, sign up for our daily newsletter, and follow us on Google News!
+Have a tip for CleanTechnica? Want to advertise? Want to suggest a guest for our CleanTech Talk podcast? Contact us here.
+Sign up for our daily newsletter for 15 new cleantech stories a day. Or sign up for our weekly one on top stories of the week if daily is too frequent.
+CleanTechnica uses affiliate links. See our policy here.
+CleanTechnica's Comment Policy

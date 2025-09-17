@@ -14,6 +14,7 @@ from .chains import (
     story_summarizer_chain,
     tldr_bullets_chain,
     quick_bites_chain,
+    why_it_matters_chain
 )
 from .newsletter import render_newsletter, save_outputs, send_email
 
@@ -93,20 +94,37 @@ def run(niche: str):
                 break
 
     summarizer = story_summarizer_chain(llm)
+    why_chain = why_it_matters_chain(llm)
+
     top_stories = []
     for s in selected:
         url = s.get("url", "")
         url_docs = db.similarity_search(url, k=4) + db.similarity_search(s.get("title", ""), k=3)
         merged = "\n\n".join([d.page_content for d in url_docs][:6])
-        summary_raw = summarizer.invoke({"title": s["title"], "url": url, "context": merged[:5000]})
+
+        # summary
+        summary_raw = summarizer.invoke({
+            "title": s["title"],
+            "url": url,
+            "context": merged[:5000]
+        })
         summary = clean_llm_output(summary_raw)
+
+        # why it matters
+        why_raw = why_chain.invoke({
+            "title": s["title"],
+            "url": url,
+            "context": merged[:3000]
+        })
+        why = clean_llm_output(why_raw)
+
         top_stories.append({
             "title": s["title"],
             "url": url,
             "summary": summary.strip(),
-            "why": s.get("why_it_matters", "")
+            "why": why.strip()
         })
-
+        
     # TL;DR bullets
     blurbs = "\n\n".join([ts["summary"][:400] for ts in top_stories])
     tldr_raw = tldr_bullets_chain(llm).invoke({"niche": niche, "blurbs": blurbs, "n": sections["tldr_bullets"]})
@@ -118,10 +136,13 @@ def run(niche: str):
     quick_bites_raw = quick_bites_chain(llm).invoke({"niche": niche, "context": qb_ctx, "n": sections["quick_bites"]})
     quick_bites = clean_llm_output(quick_bites_raw) 
 
-    # Further reading
+    # Further reading: broaden scope
     further = []
     seen_urls = {ts["url"] for ts in top_stories if ts["url"]}
-    for d in ctx_docs:
+
+    # Use all retrieved docs + a few randoms
+    candidates = ctx_docs[:20]  # top 20 retrieved docs
+    for d in candidates:
         u = d.metadata.get("url", "")
         t = d.metadata.get("title", "").strip()
         if u and u not in seen_urls:
@@ -130,17 +151,17 @@ def run(niche: str):
                 "url": u,
                 "note": "Worth a look"
             })
+            seen_urls.add(u)
         if len(further) >= sections["further_reading"]:
             break
 
-    # ✅ Fallback if empty
+    # ✅ Fallback if still empty
     if not further:
         further.append({
             "title": "Explore more on arXiv AI papers",
             "url": "http://export.arxiv.org/rss/cs.AI",
             "note": "Extra reading source"
         })
-
 
     payload = {
         "title": brand["title"],
@@ -163,7 +184,47 @@ def run(niche: str):
     send_email(html_path, cfg, niche)
     print(f"📧 Email sent for {niche}!")
 
+    # Save top stories in JSON for frontend
+    stories_data = {
+        "stories": top_stories  # already contains title, url, summary, why
+    }
 
+    # Create output directory if it doesn't exist
+    headlines_file = Path("output/latest.json")
+    headlines_file.parent.mkdir(parents=True, exist_ok=True)
+
+    # Load existing file to keep other niches
+    existing = {}
+    if headlines_file.exists():
+        try:
+            # Try reading with UTF-8 first, then fallback encodings
+            content = None
+            for encoding in ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252']:
+                try:
+                    content = headlines_file.read_text(encoding=encoding)
+                    print(f"✅ Read existing file with encoding: {encoding}")
+                    break
+                except UnicodeDecodeError:
+                    continue
+        
+            if content:
+                existing = json.loads(content)
+            else:
+                print("⚠️ Could not read existing file, starting fresh")
+                existing = {}
+            
+        except json.JSONDecodeError as e:
+            print(f"⚠️ Existing JSON file corrupted: {e}")
+            existing = {}
+
+    # Update with new niche data
+    existing[niche] = stories_data
+
+    # Write with explicit UTF-8 encoding
+    with open(headlines_file, 'w', encoding='utf-8', newline='') as f:
+        json.dump(existing, f, indent=2, ensure_ascii=False, sort_keys=True)
+
+    print(f"📰 Saved structured stories for {niche} in output/latest.json")
 
 if __name__ == "__main__":
     import argparse
