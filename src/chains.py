@@ -23,9 +23,10 @@ fields: title, url, why_it_matters (1-2 lines). Limit to {n} items."""
     return prompt | llm | StrOutputParser()
 
 def story_summarizer_chain(llm):
-    sys = """You are a precise technical summarizer. Using ONLY the provided context (do not fabricate),
-write a 120-180 word summary with a factual tone, a 'Why it matters' 1-liner,
-and 3 bullet key points. Add a 'Source:' line with the canonical URL.,Do not describe your thought process, Do not explain what you are doing, Do not mention "context", "I need to", or "the user", "Summary: "Output only the final clean summary."""
+    sys = """You are a precise summarizer. 
+Write a clean, factual 120-150 word summary of the article. 
+Do NOT include 'Why it matters', bullet points, sources, or reasoning traces. 
+Output only the final summary text."""
     prompt = ChatPromptTemplate.from_messages([
         ("system", sys),
         ("human", "Title: {title}\nURL: {url}\nContext:\n{context}")
@@ -33,15 +34,19 @@ and 3 bullet key points. Add a 'Source:' line with the canonical URL.,Do not des
     return prompt | llm | StrOutputParser()
 
 def why_it_matters_chain(llm):
-    sys = """Explain in 1-2 plain sentences why this article matters. Be direct, no fluff, no reasoning traces."""
+    sys = """Explain in 1-2 plain sentences why this article matters. 
+Be direct, no fluff, no reasoning traces. 
+Do not include 'Source' or context description."""
     prompt = ChatPromptTemplate.from_messages([
         ("system", sys),
         ("human", "Title: {title}\nURL: {url}\n\nArticle snippet:\n{context}")
     ])
     return prompt | llm | StrOutputParser()
 
+
 def tldr_bullets_chain(llm):
-    sys = """Summarize the week's niche news into {n} ultra-concise bullets (<=18 words each), no fluff, high-signal."""
+    sys = """Summarize the week's niche news into {n} ultra-concise bullets (<=18 words each).
+Output ONLY raw bullet points starting with "- ". No intros, no explanations, no titles."""
     prompt = ChatPromptTemplate.from_messages([
         ("system", sys),
         ("human", "Niche: {niche}\nTop story blurbs:\n{blurbs}")
@@ -49,10 +54,11 @@ def tldr_bullets_chain(llm):
     return prompt | llm | StrOutputParser()
 
 def quick_bites_chain(llm):
-    sys = """Create {n} one-line 'quick bites'—tiny updates with a noun-verb-object structure.
-No marketing language, keep it crisp. Return as markdown bullet list."""
+    sys = """Generate {n} very short one-line news updates in bullet list format.
+Each should start with "- " and be <=15 words. 
+Output ONLY the bullet list. No intros, no explanations, no titles."""
     prompt = ChatPromptTemplate.from_messages([
         ("system", sys),
-        ("human", "Niche: {niche}\nContext snippets:\n{context}")
+        ("human", "Niche: {niche}\nContext:\n{context}")
     ])
     return prompt | llm | StrOutputParser()

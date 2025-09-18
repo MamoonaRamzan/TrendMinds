@@ -51,7 +51,8 @@ def clean_llm_output(text: str) -> str:
         r"(?i)^next, the.*?\.",                         # "next, the ..."
         r"(?i)^okay, let.?s.*?\.",                      # "okay, let's..."
         r"(?i)^the user wants.*?\.",                    # "the user wants..."
-        r"(?i)^task:.*?\.",                             # "task: ..."
+        r"(?i)^task:.*?\.", 
+        r"(?i)^Here are .*?\."                                                        # "task: ..."
     ]
     for pat in bad_starts:
         text = re.sub(pat, "", text, flags=re.DOTALL).strip()

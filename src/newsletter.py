@@ -36,18 +36,18 @@ BASE_TEMPLATE = """# {{title}}
 {{quick_bites}}
 
 ## Further Reading
-{% if further %}
+{% if further and further[0].url %}
 {% for fr in further %}
 - [{{ fr.title }}]({{ fr.url }}) — {{ fr.note }}
 {% endfor %}
 {% else %}
-- No additional links this week.
+- {{ further[0].title }}
 {% endif %}
 
 
 ---
 
-*Generated with LangChain RAG + Groq.*
+*AI-assisted digest built with LangChain & Groq.*
 """
 
 def render_newsletter(payload: dict) -> str:

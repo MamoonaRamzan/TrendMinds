@@ -2,6 +2,7 @@ from __future__ import annotations
 import json, datetime as dt
 from pathlib import Path
 import argparse
+import re
 from tqdm import tqdm
 from langchain_community.vectorstores import Chroma
 from .utils import clean_llm_output, load_config, ensure_dir, env
@@ -75,56 +76,62 @@ def run(niche: str):
 
     selector = top_story_selector_chain(llm)
     sel_raw = selector.invoke({"niche": niche, "context": ctx_joined, "n": sections["top_stories"]})
-    try:
-        selected = json.loads(sel_raw)
-    except Exception:
+
+    # try to parse selector output as JSON (with salvage attempt)
+    def safe_parse_json(text):
+        try:
+            return json.loads(text)
+        except Exception:
+            m = re.search(r"(\[.*\])", text, flags=re.DOTALL)
+            if m:
+                try:
+                    return json.loads(m.group(1))
+                except Exception:
+                    return None
+            return None
+
+    selected = safe_parse_json(sel_raw)
+    if not selected:
+        # build a clean fallback list with title+url only
         selected = []
         seen = set()
         for d in ctx_docs:
-            u = d.metadata.get("url", "")
-            if u in seen:
+            u = d.metadata.get("url","")
+            if not u or u in seen:
                 continue
             seen.add(u)
-            selected.append({
-                "title": d.metadata.get("title", "(untitled)"),
-                "url": u,
-                "why_it_matters": "High-signal development this week."
-            })
+            selected.append({"title": d.metadata.get("title","(untitled)"), "url": u})
             if len(selected) >= sections["top_stories"]:
                 break
 
+    # Summarize + generate 'why' per story (works for normal and fallback)
     summarizer = story_summarizer_chain(llm)
     why_chain = why_it_matters_chain(llm)
 
     top_stories = []
     for s in selected:
-        url = s.get("url", "")
-        url_docs = db.similarity_search(url, k=4) + db.similarity_search(s.get("title", ""), k=3)
+        url = s.get("url","")
+        url_docs = db.similarity_search(url, k=4) + db.similarity_search(s.get("title",""), k=3)
         merged = "\n\n".join([d.page_content for d in url_docs][:6])
 
         # summary
-        summary_raw = summarizer.invoke({
-            "title": s["title"],
-            "url": url,
-            "context": merged[:5000]
-        })
-        summary = clean_llm_output(summary_raw)
+        summary_raw = summarizer.invoke({"title": s["title"], "url": url, "context": merged[:5000]})
+        summary = clean_llm_output(summary_raw).strip()
 
         # why it matters
-        why_raw = why_chain.invoke({
-            "title": s["title"],
-            "url": url,
-            "context": merged[:3000]
-        })
-        why = clean_llm_output(why_raw)
+        try:
+            why_raw = why_chain.invoke({"title": s["title"], "url": url, "context": merged[:3000]})
+            why = clean_llm_output(why_raw).strip()
+        except Exception:
+            why = ""  # safe fallback, don't hard-code a generic string
 
         top_stories.append({
             "title": s["title"],
             "url": url,
-            "summary": summary.strip(),
-            "why": why.strip()
+            "summary": summary,
+            "why": why
         })
-        
+  
     # TL;DR bullets
     blurbs = "\n\n".join([ts["summary"][:400] for ts in top_stories])
     tldr_raw = tldr_bullets_chain(llm).invoke({"niche": niche, "blurbs": blurbs, "n": sections["tldr_bullets"]})
@@ -158,9 +165,9 @@ def run(niche: str):
     # ✅ Fallback if still empty
     if not further:
         further.append({
-            "title": "Explore more on arXiv AI papers",
-            "url": "http://export.arxiv.org/rss/cs.AI",
-            "note": "Extra reading source"
+            "title": "No extra links this week — you’re fully caught up! 🚀",
+            "url": "",
+            "note": ""
         })
 
     payload = {
