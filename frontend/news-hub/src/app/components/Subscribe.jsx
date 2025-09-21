@@ -11,17 +11,20 @@ export default function Subscribe() {
   const [focusedField, setFocusedField] = useState(null);
 
   const niches = [
-    { value: "Tech", label: "Technology", icon: "💻", desc: "Latest tech trends & innovations" },
-    { value: "AI", label: "Artificial Intelligence", icon: "🤖", desc: "AI breakthroughs & developments" },
-    { value: "Crypto", label: "Cryptocurrency", icon: "₿", desc: "Crypto market & blockchain news" },
-    { value: "Climate", label: "Climate & Sustainability", icon: "🌍", desc: "Environmental & green tech" },
-    { value: "Business", label: "Business", icon: "📈", desc: "Market insights & business news" },
-    { value: "BioTech", label: "Health & Biotech", icon: "🧬", desc: "Healthcare & biotech advances" },
-    { value: "Space", label: "Space & Aerospace", icon: "🚀", desc: "Space exploration & aerospace" },
-    { value: "EdTech", label: "Education Technology", icon: "🎓", desc: "Educational innovation & tools" },
-    { value: "Science&Research", label: "Science & Research", icon: "🔬", desc: "Scientific discoveries & research" },
-    { value: "Cybersecurity", label: "Cybersecurity", icon: "🔐", desc: "Security & privacy updates" },
-  ];
+  { value: "ai_data_science", label: "AI & Data Science", icon: "🤖", color: "purple" },
+  { value: "market_business_innovation", label: "Business & Innovation", icon: "💼", color: "blue" },
+  { value: "biotech_healthcare", label: "Biotech & Healthcare", icon: "🧬", color: "red" },
+  { value: "climate_sustainability", label: "Climate & Sustainability", icon: "🌍", color: "green" },
+  { value: "space_frontier_tech", label: "Space & Frontier Tech", icon: "🚀", color: "indigo" },
+  { value: "cybersecurity_risk", label: "Cybersecurity", icon: "🔒", color: "slate" },
+  { value: "science_research", label: "Science & Research", icon: "🔬", color: "teal" },
+  { value: "fintech_digital_economy", label: "Fintech & Digital Economy", icon: "₿", color: "yellow" },
+  { value: "policy_regulation", label: "Policy & Regulation", icon: "⚖️", color: "orange" },
+  { value: "venture_capital_startups", label: "VC & Startups", icon: "💡", color: "pink" },
+  { value: "supply_chain_industry4", label: "Supply Chain & Industry 4.0", icon: "🏭", color: "gray" },
+  { value: "energy_cleantech", label: "Energy & Cleantech", icon: "⚡", color: "green" },
+  { value: "healthcare_digital_health", label: "Digital Health", icon: "🏥", color: "red" },
+];
 
   const handleSubscribe = async (e) => {
     if (e) e.preventDefault();
@@ -84,15 +87,14 @@ export default function Subscribe() {
           </h2>
           
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-            Get personalized AI-curated news delivered straight to your inbox. 
-            Stay ahead with the latest updates in your favorite niche.
+            Stay ahead of the curve with TrendMinds — receive concise, AI-curated insights from the niches that matter most to you. 
           </p>
 
           {/* Stats */}
           <div className="flex items-center justify-center gap-6 text-sm text-gray-500 mb-8">
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4" />
-              <span>10k+ subscribers</span>
+              <span>Personalized topics </span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4" />

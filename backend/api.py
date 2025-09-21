@@ -127,5 +127,5 @@ def get_available_niches():
         return {"error": "Newsletter data is corrupted"}
     
 
-#python -m src.run --niche Climate
+#python -m src.run --niche policy_regulation
 #uvicorn backend.api:app --reload

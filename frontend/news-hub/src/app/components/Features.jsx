@@ -9,24 +9,24 @@ export default function Features() {
   const features = [
     {
       icon: <Newspaper className="w-10 h-10 text-blue-600" />,
-      title: "Curated News",
-      desc: "AI-powered summaries so you spend less time reading, more time learning.",
+      title: "Curated Insights",
+      desc: "Stay updated with concise, high-signal insights — less noise, more clarity. ",
       color: "blue",
       stats: "10k+ articles",
       detail: "Smart algorithms filter through thousands of sources daily"
     },
     {
       icon: <Rocket className="w-10 h-10 text-blue-600" />,
-      title: "Multiple Niches",
-      desc: "From AI to Space, follow only what matters to you.",
+      title: "Multi-Niche Coverage",
+      desc: "From AI to Space, Business to Climate — follow only the topics that matter to you.",
       color: "indigo",
       stats: "50+ categories",
       detail: "Customizable feeds tailored to your interests"
     },
     {
       icon: <Lock className="w-10 h-10 text-blue-600" />,
-      title: "Trusted Sources",
-      desc: "We scrape verified websites so you always get reliable updates.",
+      title: "Reliable Sources",
+      desc: "All insights are drawn from trusted, expert-backed publications for maximum accuracy. ",
       color: "purple",
       stats: "99.9% accuracy",
       detail: "Only from verified, authoritative news sources"
@@ -93,11 +93,11 @@ export default function Features() {
         </div>
         
         <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-          Why Choose Us?
+          Why TrendMinds?  
         </h2>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Discover what makes our platform the perfect choice for staying informed in today's fast-paced world
+         Discover how TrendMinds keeps you informed and ahead in today’s fast-moving world
         </p>
         
         {/* Decorative line */}

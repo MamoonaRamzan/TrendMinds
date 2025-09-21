@@ -1,33 +1,41 @@
 {
-  "AI": [
+  "ai_data_science:": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Crypto": [
+  "market_business_innovation": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Climate": [
+  "biotech_healthcare_innovation": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Tech": [
+  "climate_sustainability": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Business": [
+  "space_frontier_tech": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Biotech": [
+  "cybersecurity_risk": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Space": [
+  "science_research": [
     "mamoonaramzan2@gmail.com"
   ],
-  "EdTech": [
-    "mamoonaramzan2@gmail.com",
-    "hafsaramzan2@gmail.com"
-  ],
-  "Cybersecurity": [
+  "fintech_digital_economy": [
     "mamoonaramzan2@gmail.com"
   ],
-  "Science&Research": [
+  "policy_regulation": [
+    "mamoonaramzan2@gmail.com"
+  ],
+  "venture_capital_startups": [
+    "mamoonaramzan2@gmail.com"
+  ],
+  "supply_chain_industry": [
+    "mamoonaramzan2@gmail.com"
+  ],
+  "energy_cleantech": [
+    "mamoonaramzan2@gmail.com"
+  ],
+  "healthcare_digital_health": [
     "mamoonaramzan2@gmail.com"
   ]
 }

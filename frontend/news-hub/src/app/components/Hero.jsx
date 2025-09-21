@@ -140,7 +140,7 @@ export default function Hero() {
           <h1 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
             <span className="inline-block animate-bounce" style={{ animationDelay: '0s' }}>📰</span>
             <span className="ml-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-pulse">
-              AI Newsletter Hub
+              TrendMinds Digest
             </span>
           </h1>
           
@@ -151,13 +151,12 @@ export default function Hero() {
         {/* Animated Description */}
         <div className="max-w-3xl mx-auto space-y-4">
           <p className="text-xl md:text-2xl leading-relaxed font-light text-blue-100">
-            Stay ahead with AI-powered, niche-specific news.
+            A smart briefing on the ideas shaping tomorrow.
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-blue-200">
-            Explore the latest in <span className="text-yellow-300 font-semibold">technology</span>, 
-            <span className="text-green-300 font-semibold"> science</span>, 
-            <span className="text-purple-300 font-semibold"> business</span>, and more — 
-            curated just for you.
+            From<span className="text-yellow-300 font-semibold"> science</span> and 
+            <span className="text-green-300 font-semibold"> startups</span>, 
+            <span className="text-purple-300 font-semibold"> policy and markets</span>, stay informed in minutes — not hours.
           </p>
         </div>
 

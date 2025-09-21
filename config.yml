@@ -1,79 +1,71 @@
-# Multiple niches instead of single "niche"
 niches:
-  AI:
-    - https://huggingface.co/blog/feed.xml
-    - https://blogs.microsoft.com/ai/feed/
-    - https://syncedreview.com/feed/
-    - https://www.marktechpost.com/feed/
-    - https://www.topbots.com/feed/
-    - https://artificialintelligence-news.com/feed/
-    - https://techcrunch.com/category/artificial-intelligence/feed/
-    - https://aws.amazon.com/blogs/machine-learning/feed/
-    - https://towardsdatascience.com/feed
-    - https://kdnuggets.com/feed
-    - https://datafloq.com/feed
+  ai_data_science:
+    - "https://huggingface.co/blog/feed.xml"
+    - "https://syncedreview.com/feed/"
+    - "https://techcrunch.com/category/artificial-intelligence/feed/"
+    - "https://towardsdatascience.com/feed"
 
-  Crypto:
-    - https://cointelegraph.com/rss
-    - https://news.bitcoin.com/feed/
-    - https://decrypt.co/feed
-    - https://cryptoslate.com/feed/
+  market_business_innovation:
+    - "https://www.forbes.com/innovation/feed/"
+    - "https://www.fastcompany.com/section/technology/rss"
+    - "https://feeds.feedburner.com/venturebeat/SZYF"
 
-  Climate:
-    - https://www.theguardian.com/environment/climate-crisis/rss
-    - https://www.nature.com/subjects/climate-change.rss
-    - https://cleantechnica.com/feed/
-    - https://grist.org/feed/
-    - https://www.carbonbrief.org/feed/
+  biotech_healthcare_innovation:
+    - "https://www.nature.com/subjects/biotechnology.rss"
+    - "https://www.genengnews.com/feed/"
+    - "https://www.labiotech.eu/feed/"
+    - "https://medicalxpress.com/rss-feed/"
 
-  Tech:
-    - https://www.wired.com/feed/rss
-    - https://thenextweb.com/feed/
-    - https://spectrum.ieee.org/rss/fulltext
-    - https://www.technologyreview.com/feed/
-    - https://www.fastcompany.com/section/technology/rss
-    - https://www.zdnet.com/news/rss.xml
-    - https://feeds.feedburner.com/venturebeat/SZYF
-    - https://inc42.com/feed/
-    - https://www.ycombinator.com/blog/rss/
-    - https://futureoflife.org/feed/ 
+  climate_sustainability:
+    - "https://www.nature.com/subjects/climate-change.rss"
+    - "https://www.carbonbrief.org/feed/"
+    - "https://grist.org/feed/"
+    - "https://cleantechnica.com/feed/"
 
-  Business:
-    - https://www.forbes.com/innovation/feed/
-    - https://www.fastcompany.com/section/work-life/rss
-    - https://www.hcamag.com/rss
+  space_frontier_tech:
+    - "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+    - "https://spacenews.com/feed/"
+    - "https://www.space.com/feeds/all"
+    - "https://arstechnica.com/science/space/rss"
 
-  BioTech:
-    - https://www.healthit.gov/buzz-blog/feed/
-    - https://medicalxpress.com/rss-feed/
-    - https://www.digitalhealth.net/feed/
-    - https://www.biotechniques.com/feed/
-    - https://www.labiotech.eu/feed/
-    - https://www.nature.com/subjects/biotechnology.rss
-    - https://www.genengnews.com/feed/
+  cybersecurity_risk:
+    - "https://www.schneier.com/feed/atom/"
+    - "https://krebsonsecurity.com/feed/"
+    - "https://www.darkreading.com/rss.xml"
+    - "https://www.cybersecuritydive.com/feeds/news/"
 
-  Space:
-    - https://www.nasa.gov/rss/dyn/breaking_news.rss
-    - https://spacenews.com/feed/
-    - https://www.space.com/feeds/all
-    - https://arstechnica.com/science/space/rss
+  science_research:
+    - "https://www.sciencedaily.com/rss/top/science.xml"
+    - "https://phys.org/rss-feed/"
+    - "https://www.newscientist.com/feed/home/"
 
-  EdTech:
-    - https://www.classcentral.com/report/feed/
-    - https://edtechmagazine.com/k12/rss.xml
-    - https://edtechmagazine.com/higher/rss.xml
-    - https://elearningindustry.com/feed
+  fintech_digital_economy:
+    - "https://www.pymnts.com/feed/"
+    - "https://www.crowdfundinsider.com/feed/"
 
-  Science&Research:
-    - https://www.sciencedaily.com/rss/top/science.xml
-    - https://www.sciencenews.org/feed
-    - https://www.newscientist.com/feed/home/
-    - https://phys.org/rss-feed/
+  policy_regulation:
+    - "https://www.justsecurity.org/feed/"
 
-  Cybersecurity:
-    - https://www.schneier.com/feed/atom/
-    - https://krebsonsecurity.com/feed/
-    - https://www.darkreading.com/rss.xml      
+  venture_capital_startups:
+    - "https://news.crunchbase.com/feed/"
+    - "https://future.a16z.com/feed/"
+    - "https://tech.eu/feed/"
+
+  supply_chain_industry:
+    - "https://www.manufacturing.net/rss.xml"
+
+  energy_cleantech:
+    - "https://www.eia.gov/rss/todayinenergy.xml"
+    - "https://www.renewableenergyworld.com/feed/"
+    - "https://www.energymonitor.ai/feed/"
+    - "https://www.pv-tech.org/feed/"
+
+  healthcare_digital_health:
+    - "https://healthtechmagazine.net/rss.xml"
+    - "https://www.fiercehealthcare.com/rss/xml"
+    - "https://www.medtechdive.com/feeds/news/"
+    - "https://feeds.feedburner.com/beckershospitalreview"
+  
 
 timespan_days: 7               # articles from last N days
 max_articles: 120              # cap to control cost/time
@@ -95,7 +87,7 @@ output:
 
 branding:
   title: "Weekly Insight"
-  subtitle: "Curated summaries powered by RAG & Groq AI"
+  subtitle: "Curated summaries by TechMind Digest"
   author: "Mamoona Ramzan"
 
 email:

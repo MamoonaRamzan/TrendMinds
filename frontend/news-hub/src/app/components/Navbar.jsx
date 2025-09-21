@@ -9,7 +9,7 @@ export default function Navbar() {
   const navItems = [
     { id: "hero", label: "About" },
     { id: "features", label: "Features" },
-    { id: "headlines", label: "Headlines" },
+    { id: "headlines", label: "Latest Insights" },
     { id: "subscribe", label: "Subscribe" },
   ];
 
@@ -61,7 +61,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold text-blue-600 cursor-pointer hover:text-blue-700 transition-colors">
-            News Hub
+            TrendMinds
           </h1>
         </div>
 

@@ -10,32 +10,34 @@ from email.mime.multipart import MIMEMultipart
 
 
 
-BASE_TEMPLATE = """# {{title}}
+BASE_TEMPLATE = """# 📰 {{title}}
 *{{subtitle}}*  
 **Author:** {{author}} | **Week of:** {{week}}
 
 ---
 
-## TL;DR
+## ⚡ TL;DR
 {{tldr}}
 
 ---
 
-## Top {{top_n}} Stories
+## 🌟 Top {{top_n}} Stories
 {% for s in stories %}
 ### {{loop.index}}) {{s.title}}
 {{s.summary}}
 
-**Why it matters:** {{s.why}}  
-**Source:** {{s.url}}
+🔑 **Why it matters:** {{s.why}}  
+🔗 **Source:** [Read more]({{s.url}})
 
 ---
 {% endfor %}
 
-## Quick Bites
+## 🍪 Quick Bites
 {{quick_bites}}
 
-## Further Reading
+---
+
+## 📚 Further Reading
 {% if further and further[0].url %}
 {% for fr in further %}
 - [{{ fr.title }}]({{ fr.url }}) — {{ fr.note }}
@@ -44,11 +46,9 @@ BASE_TEMPLATE = """# {{title}}
 - {{ further[0].title }}
 {% endif %}
 
-
 ---
-
-*AI-assisted digest built with LangChain & Groq.*
 """
+
 
 def render_newsletter(payload: dict) -> str:
     """Render newsletter in Markdown using Jinja2."""
@@ -72,27 +72,54 @@ def save_outputs(markdown_text: str, out_dir: str, file_md: str, file_html: str)
       <title>Newsletter</title>
       <style>
         body {{
-          font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-          max-width: 820px;
+          font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          max-width: 800px;
           margin: auto;
-          padding: 32px;
-          line-height: 1.6;
-          background-color: #f9f9f9;
-        }}
-        h1, h2, h3 {{
+          padding: 40px;
+          background-color: #f4f6f9;
           color: #333;
+        }}
+        h1 {{
+          color: #2c3e50;
+          border-bottom: 3px solid #1a73e8;
+          padding-bottom: 8px;
+        }}
+        h2 {{
+          color: #1a73e8;
+          margin-top: 30px;
+        }}
+        h3 {{
+          color: #444;
         }}
         a {{
           color: #1a73e8;
-          text-decoration: none;
+          font-weight: 500;
         }}
         a:hover {{
           text-decoration: underline;
         }}
+        .card {{
+          background: white;
+          padding: 20px;
+          margin: 20px 0;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }}
+        .footer {{
+          text-align: center;
+          margin-top: 40px;
+          font-size: 0.9rem;
+          color: #666;
+        }}
       </style>
     </head>
     <body>
-      {html_body}
+      <div class="card">
+        {html_body}
+      </div>
+      <div class="footer">
+        ✨ Curated by <b>TrendMinds</b> | AI-powered insights for the curious mind ✨
+      </div>
     </body>
     </html>
     """

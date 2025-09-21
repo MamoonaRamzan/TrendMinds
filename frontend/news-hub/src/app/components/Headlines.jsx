@@ -10,17 +10,20 @@ export default function Headlines() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const niches = [
-    { value: "Tech", label: "Technology", icon: "💻", color: "blue" },
-    { value: "AI", label: "Artificial Intelligence", icon: "🤖", color: "purple" },
-    { value: "Crypto", label: "Cryptocurrency", icon: "₿", color: "yellow" },
-    { value: "Climate", label: "Climate", icon: "🌍", color: "green" },
-    { value: "Business", label: "Business", icon: "💼", color: "gray" },
-    { value: "BioTech", label: "Health & Biotech", icon: "🧬", color: "red" },
-    { value: "Space", label: "Space", icon: "🚀", color: "indigo" },
-    { value: "EdTech", label: "Education Technology", icon: "📚", color: "orange" },
-    { value: "Science&Research", label: "Science & Research", icon: "🔬", color: "teal" },
-    { value: "Cybersecurity", label: "Cybersecurity", icon: "🔒", color: "slate" },
-  ];
+  { value: "ai_data_science", label: "AI & Data Science", icon: "🤖", color: "purple" },
+  { value: "market_business_innovation", label: "Business & Innovation", icon: "💼", color: "blue" },
+  { value: "biotech_healthcare", label: "Biotech & Healthcare", icon: "🧬", color: "red" },
+  { value: "climate_sustainability", label: "Climate & Sustainability", icon: "🌍", color: "green" },
+  { value: "space_frontier_tech", label: "Space & Frontier Tech", icon: "🚀", color: "indigo" },
+  { value: "cybersecurity_risk", label: "Cybersecurity", icon: "🔒", color: "slate" },
+  { value: "science_research", label: "Science & Research", icon: "🔬", color: "teal" },
+  { value: "fintech_digital_economy", label: "Fintech & Digital Economy", icon: "₿", color: "yellow" },
+  { value: "policy_regulation", label: "Policy & Regulation", icon: "⚖️", color: "orange" },
+  { value: "venture_capital_startups", label: "VC & Startups", icon: "💡", color: "pink" },
+  { value: "supply_chain_industry4", label: "Supply Chain & Industry 4.0", icon: "🏭", color: "gray" },
+  { value: "energy_cleantech", label: "Energy & Cleantech", icon: "⚡", color: "green" },
+  { value: "healthcare_digital_health", label: "Digital Health", icon: "🏥", color: "red" },
+];
 
   const fetchHeadlines = async (niche = headlinesNiche) => {
     setLoading(true);
@@ -44,7 +47,7 @@ export default function Headlines() {
 
   // Load Tech news by default
   useEffect(() => {
-    fetchHeadlines("Tech");
+    fetchHeadlines("market_business_innovation");
   }, []);
 
   const handleNicheChange = (newNiche) => {
@@ -71,12 +74,11 @@ export default function Headlines() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Latest Headlines
+            Latest Insights
           </h2>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Stay informed with AI-curated news from your favorite niches. 
-            Discover what's happening in the world of technology and beyond.
+            Stay ahead with AI-curated briefs across research, business, and technology. Discover the trends shaping tomorrow.
           </p>
         </div>
 
